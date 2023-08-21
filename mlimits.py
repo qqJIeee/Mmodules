@@ -272,7 +272,7 @@ class mlimits(loader.Module):
 
     @loader.command()
     async def lautoset(self,message):
-        '''- Автоматически устанавливать лимит\n[Ник игрока] [Задержка] [Количество]'''
+        '''- Автоматически устанавливать лимит\n[Ник игрока] [Задержка]'''
         args = utils.get_args_split_by(message, " ")
         if len(args) == 1:
             await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите задержку и количество лимитов</b>")
@@ -316,6 +316,7 @@ class mlimits(loader.Module):
         self.db.set(self.name, "mid", int(chat_id))
     @loader.command()
     async def lastop(self,message):
+        '''Остановить автоматическую установку лимита'''
         self.limitsxx = False
         await utils.answer(message, "✅ Автоматическая установка лимита остановлена")
     @loader.command(alias = 'lsc')
