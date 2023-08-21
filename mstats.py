@@ -677,13 +677,19 @@ class mstats(loader.Module):
                         "text" : f"☀️ За сегодня",
                         "callback" : self.stdy,
                     },
-                ],
-                [
+                
+                
                 
                     {
                         "text" : f"За 🔜",
                         "callback" : self.sall,
                     },
+                ],
+                [
+                    {
+                        "text" : "🔻 Закрыть",
+                        "action" : "close",
+                    }
                 ]
             ]
         )
@@ -697,14 +703,19 @@ class mstats(loader.Module):
                         "text" : f"☀️ За сегодня",
                         "callback" : self.stdy,
                     },
-                ],
-                [
+                
                 
                 
                     {
                         "text" : f"За 🔜",
                         "callback" : self.sall,
                     },
+                ],
+                [
+                    {
+                        "text" : "🔻 Закрыть",
+                        "action" : "close",
+                    }
                 ]
             ]
         )
