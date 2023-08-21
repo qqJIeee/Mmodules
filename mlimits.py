@@ -278,9 +278,9 @@ class mlimits(loader.Module):
         '''- Автоматически устанавливать лимит\n[Ник игрока] [Задержка]'''
         args = utils.get_args_split_by(message, " ")
         if len(args) == 1:
-            await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите задержку и количество лимитов</b>")
+            await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите задержку</b>")
         if not args:
-            await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите имя пользователя задержку и количество</b>")
+            await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите имя пользователя задержку</b>")
         if len(args) > 2:
             await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Вы ввели слишком много аргументов</b>")
         if len(args) == 2:
