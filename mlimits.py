@@ -315,7 +315,7 @@ class mlimits(loader.Module):
         chat_id = chat_entity.id
         chat_id = '-100' + str(chat_id)
         self.db.set(self.name, "mid", int(chat_id))
-    async def lautosett():
+    async def lautosett(self):
         nick = self.get('qq')
         tt = self.db.get(self.name, "tt", None)
         dly = self.config["dly"]
