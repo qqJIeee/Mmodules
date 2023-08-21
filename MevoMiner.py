@@ -72,21 +72,8 @@ class MevoMiner(loader.Module):
         else:
             return
     @loader.watcher()
-    async def fw(self,message):
+    async def bosses_fw(self,message):
         mid = self.db.get(self.name, "mid", None)
-        dly = self.config["dly"]
-        if self.fw:
-            if self.mm:
-                if message.chat_id == mid and "A wait of" in message.raw_text and "seconds is required" in message.raw_text:
-                    fss = message.text.index("A wait of") + len("A wait of")
-                    fsss = message.text.index("seconds is required")
-                    fs = int(message.text[fss:fsss]) + 5
-                    self.mm = False
-                    await asyncio.sleep(fs)
-                    await self.mmm(message)
-                    await message.delete()
-    @loader.watcher()
-    async def bosses(self,message):
         dly = self.config["dly"]
         ag = False
         ass = False
@@ -97,6 +84,16 @@ class MevoMiner(loader.Module):
                 ass = True
             elif c == "fw":
                 self.fw = True
+        if self.fw:
+            if self.mm:
+                if message.chat_id == mid and "A wait of" in message.raw_text and "seconds is required" in message.raw_text:
+                    fss = message.text.index("A wait of") + len("A wait of")
+                    fsss = message.text.index("seconds is required")
+                    fs = int(message.text[fss:fsss]) + 5
+                    self.mm = False
+                    await asyncio.sleep(fs)
+                    await self.mmm(message)
+                    await message.delete()
         if ass:
             if self.mm:
                 if message.chat_id == 5522271758 and "🔶 Ты выбрал босса" in message.raw_text:
