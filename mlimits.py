@@ -259,7 +259,7 @@ class mlimits(loader.Module):
                     fs = int(message.text[fss:fsss]) + 5
                     self.limitsxx = False
                     await asyncio.sleep(fs)
-                    await self.lautoset(message, nick, tt)
+                    await self.lautosett(message, nick, tt)
                     await message.delete()
         if ass:
             if self.limitsx:
@@ -315,6 +315,33 @@ class mlimits(loader.Module):
         chat_id = chat_entity.id
         chat_id = '-100' + str(chat_id)
         self.db.set(self.name, "mid", int(chat_id))
+    async def lautosett():
+        nick = self.get('qq')
+        tt = self.db.get(self.name, "tt", None)
+        dly = self.config["dly"]
+        limitsf = self.db.get(self.name, "limitsf", None)
+        kolvo = int(limitsf) / (int(time) / int(dly))
+        kolvo = round(int(kolvo))
+        time = str(time)
+        self.set("qq",chel)
+        self.db.set(self.name, "tt", time)
+        limitp = self.config["Sum"]
+        self.limitsxx = True
+        timee = time[-1]
+        if timee in ['1']:
+            await utils.answer(message, f"✅ <b>| Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунду <code>{kolvo}</code> раз начата</b>")
+        if timee in ['2', '3', '4']:
+            await utils.answer(message, f"✅ <b>| Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунды <code>{kolvo}</code> раз начата</b>")
+        if timee in ['5', '6', '7', '8', '9', '0']:
+            await utils.answer(message, f"✅ <b>| Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунд <code>{kolvo}</code> раз начата </b>")
+        time = int(time)
+        if self.limitsxx:
+            while self.limitsxx:
+                kolvo -= 1 
+                if kolvo == 0:
+                    self.limitsxx = False
+                await self.client.send_message("@mine_evo_bot", f"Перевести {chel} {limitp}")
+                await asyncio.sleep(time)
     @loader.command()
     async def lastop(self,message):
         '''Остановить автоматическую установку лимита'''
