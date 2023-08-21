@@ -57,7 +57,7 @@ class mlimits(loader.Module):
 
     @loader.command()
     async def mlhelp(self,message):
-        ''' - Помощь для команды mlimits'''
+        ''' - Помощь для модуля mlimits'''
         await self.inline.form(
             text="<b>Ку! Это помощь для модуля mlimits\n\nНажмите продолжить</b>",
             message=message,
