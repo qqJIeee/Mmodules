@@ -299,11 +299,11 @@ class mlimits(loader.Module):
             self.limitsxx = True
             timee = time[-1]
             if timee in ['1']:
-                await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунду начата")
+                await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунду начата {kolvo} раз")
             if timee in ['2', '3', '4']:
-                await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунды начата")
+                await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунды начата {kolvo} раз")
             if timee in ['5', '6', '7', '8', '9', '0']:
-                await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунд начата")
+                await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунд начата {kolvo} раз")
             time = int(time)
             if self.limitsxx:
                 while self.limitsxx:
