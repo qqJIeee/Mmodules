@@ -253,7 +253,7 @@ class mlimits(loader.Module):
                     self.limitsx = False
                     self.bb = True
         if ag:
-            if self.abbs:
+            if self.limitsx:
                 if self.bb:
                     if message.chat_id == 5522271758 and "для атаки выбери босса" in message.raw_text:
                         self.bb = False
