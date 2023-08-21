@@ -72,16 +72,7 @@ class MevoMiner(loader.Module):
         else:
             return
     @loader.watcher()
-    async def watcher(self,message):
-        ag = False
-        ass = False
-        for c in self.config["cmt"]:
-            if c == "ag":
-                ag = True
-            elif c == "as":
-                ass = True
-            elif c == "fw":
-                self.fw = True
+    async def fw(self,message):
         mid = self.db.get(self.name, "mid", None)
         dly = self.config["dly"]
         if self.fw:
@@ -94,6 +85,17 @@ class MevoMiner(loader.Module):
                     await asyncio.sleep(fs)
                     await self.mmm(message)
                     await message.delete()
+    @loader.watcher()
+    async def bosses(self,message):
+        ag = False
+        ass = False
+        for c in self.config["cmt"]:
+            if c == "ag":
+                ag = True
+            elif c == "as":
+                ass = True
+            elif c == "fw":
+                self.fw = True
         if ass:
             if self.mm:
                 if message.chat_id == 5522271758 and "🔶 Ты выбрал босса" in message.raw_text:
