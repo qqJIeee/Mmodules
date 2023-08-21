@@ -36,6 +36,7 @@ class mlimits(loader.Module):
         self.limitsxx = False
         self.limitsx = False
         self.fw = False
+        self.fww = False
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "Sum", "",
@@ -49,8 +50,8 @@ class mlimits(loader.Module):
             ),
             loader.ConfigValue(
                 "cmt", ["fw"],
-                lambda: "Включить/выключить автовыполнение команды 'mcon'\nas - Выключать команду во время убийства босса\nag - Включать команду после убийства босса\nfw - Включать команду после флудвейта",
-                validator=loader.validators.MultiChoice(["ag", "as", "fw"])
+                lambda: "Включить/выключить автовыполнение команд\nas - Выключать команду 'mcon/mlp' во время убийства босса\nag - Включать команду 'mcon' после убийства босса\nfw - Включать команду 'mcon' после флудвейта\nfww - Включать команду 'lautoset' после флудвейта",
+                validator=loader.validators.MultiChoice(["ag", "as", "fw", 'fww'])
             )
         )
 
@@ -238,6 +239,8 @@ class mlimits(loader.Module):
                 ag = True
             elif c == "fw":
                 self.fw = True
+            elif c == "fww":
+                self.fww = True
         if self.fw:
             if self.limitsx:
                 if message.chat_id == mid and "A wait of" in message.raw_text and "seconds is required" in message.raw_text:
@@ -248,7 +251,7 @@ class mlimits(loader.Module):
                     await asyncio.sleep(fs)
                     await self.mcon(message)
                     await message.delete()
-        if self.fw:
+        if self.fww:
             if self.limitsxx:
                 if message.chat_id == mid and "A wait of" in message.raw_text and "seconds is required" in message.raw_text:
                     fss = message.text.index("A wait of") + len("A wait of")
