@@ -87,6 +87,7 @@ class MevoMiner(loader.Module):
                     await message.delete()
     @loader.watcher()
     async def bosses(self,message):
+        dly = self.config["dly"]
         ag = False
         ass = False
         for c in self.config["cmt"]:
