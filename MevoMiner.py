@@ -13,7 +13,7 @@ class MevoMiner(loader.Module):
         "name" : "MevoMiner"
     }
     def __init__(self):
-        self.mem = False
+        self.bb = False
         self.mm = False
         self.fw = False
         self.config = loader.ModuleConfig(
@@ -97,12 +97,12 @@ class MevoMiner(loader.Module):
         if ass:
             if self.mm:
                 if message.chat_id == 5522271758 and "🔶 Ты выбрал босса" in message.raw_text:
-                    self.mem = True
+                    self.bb = True
                     await self.mmm(message)
         if ag:
-            if self.mem:
+            if self.bb:
                 if message.chat_id == 5522271758 and "для атаки выбери босса" in message.raw_text:
-                    self.mem = False
+                    self.bb = False
                     await asyncio.sleep(dly)
                     await self.mmm(message)
     @loader.command(alias = 'msc')
