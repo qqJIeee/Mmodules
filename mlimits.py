@@ -323,7 +323,7 @@ class mlimits(loader.Module):
         kolvo = int(limitsf) / (int(tt) / int(dly))
         kolvo = round(int(kolvo))
         tt = str(tt)
-        self.set("qq",chel)
+        self.set("qq",nick)
         self.db.set(self.name, "tt", tt)
         limitp = self.config["Sum"]
         self.limitsxx = True
