@@ -690,7 +690,7 @@ class mstats(loader.Module):
     async def iback(self,call: InlineCall):
         im = self.get('im', None)
         await call.edit(
-            text=f"<b>📊 | >Статистика игрока {im}</b>",
+            text=f"<b>📊 | Статистика игрока {im}</b>",
             reply_markup=[
                 [
                     {
