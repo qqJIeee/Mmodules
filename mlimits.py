@@ -259,7 +259,7 @@ class mlimits(loader.Module):
                     fs = int(message.text[fss:fsss]) + 5
                     self.limitsxx = False
                     await asyncio.sleep(fs)
-                    await self.lautosett(message, nick, tt)
+                    await self.lautosett()
                     await message.delete()
         if ass:
             if self.limitsx:
