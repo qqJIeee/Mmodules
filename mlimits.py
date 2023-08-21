@@ -227,6 +227,7 @@ class mlimits(loader.Module):
                 self.db.set(self.name,"limitss",limitsss)
     @loader.watcher()
     async def bosses_fw(self,message):
+        dly = self.config["dly"]
         mid = self.db.get(self.name, "mid", None)
         ag = None
         ass = None
