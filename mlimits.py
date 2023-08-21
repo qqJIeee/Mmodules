@@ -33,6 +33,7 @@ class mlimits(loader.Module):
         )
     def __init__(self):
         self.bb = False
+        self.limitsxx = False
         self.limitsx = False
         self.fw = False
         self.config = loader.ModuleConfig(
@@ -228,6 +229,8 @@ class mlimits(loader.Module):
         mid = self.db.get(self.name, "mid", None)
         ag = None
         ass = None
+        nick = self.get("qq", None)
+        tt = self.db.get(self.name, "tt", None)
         for c in self.config["cmt"]:
             if c == "as":
                 ass = True
@@ -241,9 +244,19 @@ class mlimits(loader.Module):
                     fss = message.text.index("A wait of") + len("A wait of")
                     fsss = message.text.index("seconds is required")
                     fs = int(message.text[fss:fsss]) + 5
-                    self.mm = False
+                    self.limitsx = False
                     await asyncio.sleep(fs)
                     await self.mcon(message)
+                    await message.delete()
+        if self.fw:
+            if self.limitsxx:
+                if message.chat_id == mid and "A wait of" in message.raw_text and "seconds is required" in message.raw_text:
+                    fss = message.text.index("A wait of") + len("A wait of")
+                    fsss = message.text.index("seconds is required")
+                    fs = int(message.text[fss:fsss]) + 5
+                    self.limitsxx = False
+                    await asyncio.sleep(fs)
+                    await self.lautoset(message, nick, tt)
                     await message.delete()
         if ass:
             if self.limitsx:
@@ -272,12 +285,15 @@ class mlimits(loader.Module):
         if len(args) == 3:
             chel = args[0]
             time = args[1]
-            kolvo = args[2]
+            dly = self.config["dly"]
+            limitsf = self.db.get(self.name, "limitsf", None)
+            kolvo = limitsf / (int(time) / dly)
+            kolvo = round(int(kolvo))
             time = str(time)
-            kolvo = int(kolvo)
             self.set("qq",chel)
+            self.db.set(self.name, "tt", time)
             limitp = self.config["Sum"]
-            limitss = self.db.get(self.name, "limitss","")
+            self.limitsxx = True
             timee = time[-1]
             if timee in ['1']:
                 await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунду начата")
@@ -286,15 +302,22 @@ class mlimits(loader.Module):
             if timee in ['5', '6', '7', '8', '9', '0']:
                 await utils.answer(message, f"✅ Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунд начата")
             time = int(time)
-            while kolvo > 0:
-                kolvo -= 1 
-                await self.client.send_message("@mine_evo_bot", f"Перевести {chel} {limitp}")
-                await asyncio.sleep(time)
+            if self.limitsxx:
+                while self.limitsxx:
+                    kolvo -= 1 
+                    if kolvo == 0:
+                        self.limitsxx = False
+                    await self.client.send_message("@mine_evo_bot", f"Перевести {chel} {limitp}")
+                    await asyncio.sleep(time)
     async def www(self,message):
         chat_entity = await self.client.get_entity("hikka-logs")
         chat_id = chat_entity.id
         chat_id = '-100' + str(chat_id)
         self.db.set(self.name, "mid", int(chat_id))
+    @loader.command()
+    async def lastop(self,message):
+        self.limitsxx = False
+        await utils.answer(message, "✅ Автоматическая установка лимита остановлена")
     @loader.command(alias = 'lsc')
     async def lscfg(self,message: Message):
         '''- Установить значение в конфиг\n[Название] [Значение]\nНе работат с параметром cmt'''
@@ -315,7 +338,7 @@ class mlimits(loader.Module):
 
     async def hnext(self, call: InlineCall):
         await call.edit(
-            text="<b>1. Установите сумму для проверки лимита игрока(Свой лимит или 0.01 своего лимита). Сделать это можно через .lscfg(alias=lsc) параметр sm или через .config mlimits\n\n2. Установите задержку. Можно также через lscfg параметр dly или через .config\n\n3.Начните переводить лимиты командой .mlp\n\n4. Чтобы автоматически менялся лимит если игрок повышает уровень нужно написать команду .lautoset\n\n5. Советую ставить в lautoset 300 секунд т.е 5 минут\n\n6. Чтобы рассчитать количество в lautoset нужно:\n▫️  Вашу задержку которую вы пишете в lautoset разделить на задержку перевода лимитов(dly)\n▫️  Разделить количество лимитов которые вы переводите на то что у вас получилось в первом пункте\n\n7. Чтобы остановить перевод лимитов пишите .mstop | Продолжить .mcon\n\n Удачного пользования!</b>",
+            text="<b>1. Установите сумму для проверки лимита игрока(Свой лимит или 0.01 своего лимита). Сделать это можно через .lscfg(alias=lsc) параметр sm или через .config mlimits\n\n2. Установите задержку. Можно также через lscfg параметр dly или через .config\n\n3. Начните переводить лимиты командой .mlp\n\n4. Чтобы автоматически менялся лимит если игрок повышает уровень нужно написать команду .lautoset\n\n5. Советую ставить в lautoset 300 секунд т.е 5 минут\n\n6. Чтобы остановить перевод лимитов пишите .mstop | Продолжить .mcon\n\n Удачного пользования!</b>",
             reply_markup=[
                 [
                     {
