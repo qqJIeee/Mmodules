@@ -253,12 +253,11 @@ class mlimits(loader.Module):
                     self.limitsx = False
                     self.bb = True
         if ag:
-            if self.limitsx:
-                if self.bb:
-                    if message.chat_id == 5522271758 and "для атаки выбери босса" in message.raw_text:
-                        self.bb = False
-                        await asyncio.sleep(dly)
-                        await self.mcon(message)
+            if self.bb:
+                if message.chat_id == 5522271758 and "для атаки выбери босса" in message.raw_text:
+                    self.bb = False
+                    await asyncio.sleep(dly)
+                    await self.mcon(message)
 
     @loader.command()
     async def lautoset(self,message):
