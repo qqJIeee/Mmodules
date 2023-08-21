@@ -320,21 +320,21 @@ class mlimits(loader.Module):
         tt = self.db.get(self.name, "tt", None)
         dly = self.config["dly"]
         limitsf = self.db.get(self.name, "limitsf", None)
-        kolvo = int(limitsf) / (int(time) / int(dly))
+        kolvo = int(limitsf) / (int(tt) / int(dly))
         kolvo = round(int(kolvo))
-        time = str(time)
+        tt = str(tt)
         self.set("qq",chel)
-        self.db.set(self.name, "tt", time)
+        self.db.set(self.name, "tt", tt)
         limitp = self.config["Sum"]
         self.limitsxx = True
-        timee = time[-1]
+        timee = tt[-1]
         if timee in ['1']:
             await utils.answer(message, f"✅ <b>| Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунду <code>{kolvo}</code> раз начата</b>")
         if timee in ['2', '3', '4']:
             await utils.answer(message, f"✅ <b>| Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунды <code>{kolvo}</code> раз начата</b>")
         if timee in ['5', '6', '7', '8', '9', '0']:
             await utils.answer(message, f"✅ <b>| Автоматическая установка лимита игроку <code>{chel}</code> раз в <code>{time}</code> секунд <code>{kolvo}</code> раз начата </b>")
-        time = int(time)
+        tt = int(tt)
         if self.limitsxx:
             while self.limitsxx:
                 kolvo -= 1 
