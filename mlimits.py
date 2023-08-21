@@ -288,7 +288,7 @@ class mlimits(loader.Module):
             time = args[1]
             dly = self.config["dly"]
             limitsf = self.db.get(self.name, "limitsf", None)
-            kolvo = limitsf / (int(time) / dly)
+            kolvo = int(limitsf) / (int(time) / int(dly))
             kolvo = round(int(kolvo))
             time = str(time)
             self.set("qq",chel)
