@@ -281,11 +281,9 @@ class mlimits(loader.Module):
             await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите задержку и количество лимитов</b>")
         if not args:
             await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите имя пользователя задержку и количество</b>")
-        if len(args) == 2:
-            await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Введите количество</b>")
-        if len(args) > 3:
+        if len(args) > 2:
             await utils.answer(message, "🚫 <b>| Ошибка!\n👉 | Вы ввели слишком много аргументов</b>")
-        if len(args) == 3:
+        if len(args) == 2:
             chel = args[0]
             time = args[1]
             dly = self.config["dly"]
