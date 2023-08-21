@@ -681,7 +681,7 @@ class mstats(loader.Module):
                 
                 
                     {
-                        "text" : f"За 🔜",
+                        "text" : f"⏳ За все время",
                         "callback" : self.sall,
                     },
                 ],
@@ -696,18 +696,19 @@ class mstats(loader.Module):
     async def iback(self,call: InlineCall):
         im = self.get('im', None)
         await call.edit(
-            text=f"<b>📊 | Статистика игрока {im}</b>",
+            text=f"<b>📊 | >Статистика игрока {im}</b>",
             reply_markup=[
                 [
                     {
                         "text" : f"☀️ За сегодня",
                         "callback" : self.stdy,
                     },
-                
+                ],
+                [
                 
                 
                     {
-                        "text" : f"За 🔜",
+                        "text" : f"⏳ За все время",
                         "callback" : self.sall,
                     },
                 ],
@@ -783,6 +784,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -823,6 +830,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -865,6 +878,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -905,6 +924,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -947,6 +972,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -988,6 +1019,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1029,6 +1066,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1179,6 +1222,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1219,6 +1268,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1261,6 +1316,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1301,6 +1362,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1343,6 +1410,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1384,6 +1457,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1425,6 +1504,12 @@ class mstats(loader.Module):
                     {
                         "text" : "🔻 Закрыть",
                         "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
                     }
                 ]
             ]
@@ -1651,4 +1736,83 @@ class mstats(loader.Module):
                 ]
             ]  
         )
+    async def idrest(self,call: InlineCall):
+        self.set("kt1",0)
+        self.set("rkt1",0)
+        self.set("k1",0)
+        self.set("rk1",0)
+        self.set("mif1",0)
+        self.set("kr1",0)
+        self.set("zv1",0)
+        self.set("p",0)
+        self.set("pb",0)
+        self.set("sb",0)
+        self.set("mb",0)
+        self.set("klks",0)
+        self.set('bss',0)
+        self.set("ktt",0)
+        self.set("rkb",0)
+        self.set("kb",0)
+        self.set("bskld",0)
+        self.set("mmb",0)
+        self.set("kk",0)
+        self.set("pthx",0)
+        self.set('ktt',0)
+        self.set('rkk',0)
+        self.set("miff",0)
+        self.set("kkr",0)
+        self.set("zvv",0)
+        self.set("bdmg",0)
+        self.set("bkdmg",0)
+        self.set("ppthx",0)
+        self.set("boostsss",0)
+        self.set("rkkt",0)
+        timee = time.time()
+        self.set("timee",timee)
+        await call.edit(
+                text=f"<b>📊 | Статистика игрока {im}</b>за <i>{ss}с.:</i>",
+                reply_markup=[
+                     [
+                    {
+                        "text" : "🧱 Шахта",
+                        "callback" : self.isht,
+                    },
+                
+                
+                    {
+                        "text" : "☠️ Боссы",
+                        "callback" : self.ibss,
+                    },
+                
+                
+                    {
+                        "text" : "🎁 Трейды",
+                        "callback" : self.itrd,
+                    }
+                ],
+                [
+                    {
+                        "text" : "📚 Прочее",
+                        "callback" : self.ianf,
+                    }
+                ],
+                [
+                    {
+                        'text' : "🔙 Назад",
+                        'callback' : self.iback,
+                    },
+                    {
+                        "text" : "🔻 Закрыть",
+                        "action" : "close",
+                    },
+                ],
+                [
+                    {
+                        "text" : "♻️ Сбросить статистику",
+                        "callback" : self.idrest,
+                    }
+                ]
+            ]
+        )
+        
     
