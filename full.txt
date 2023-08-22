@@ -1,3 +1,5 @@
 MevoMiner
 mlimits
 mstats
+mattk
+mlogs
