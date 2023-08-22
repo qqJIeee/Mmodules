@@ -114,6 +114,7 @@ class mstats(loader.Module):
         self.set("ppthx",0)
         self.set("boostsss",0)
         self.set("rkkt",0)
+        self.set("bskn",0)
         timee = time.time()
         self.set("timee",timee)
         await utils.answer(message, "Данные в базе данных сброшены")
