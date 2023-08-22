@@ -143,24 +143,27 @@ class mlimits(loader.Module):
         await asyncio.sleep(1)
         await self.client.send_message("@mine_evo_bot", f"Перевести {player} {limitp}")
         await utils.answer(message, f"💸 Продолжаю перевод лимитов игроку <code>{player}</code>\nОсталось перевести : <code>{limmm}</code>")
-        if self.limitsx:
-            while self.limitsx:
-                limits -= 1
-                limitsr += 1 
-                self.db.set(self.name, 'limitsr',limitsr)
-                limitsx = self.get("limitsx",0)
-                if limits == 0:
-                    self.limitsx = False
-                limitss = self.db.get(self.name, "limitss", "")
-                await self.client.send_message("mlimits", f"Перевести {player} {limitss}")
-                await asyncio.sleep(dly)
-            limits = limmm
-            limmmm = int(limits) - int(limitsr)
-            self.db.set(self.name,"limmm", limmmm)
-            if limmmm == 0:
-                await self.client.send_message(message.peer_id, f"✅ <b>Все лимиты игроку <code>{player}</code> переведены:</b> <code>{limits}</code>")
-            if message.out:
-                await message.delete()
+        if limits >= 0:
+            if self.limitsx:
+                while self.limitsx:
+                    limits -= 1
+                    limitsr += 1 
+                    self.db.set(self.name, 'limitsr',limitsr)
+                    limitsx = self.get("limitsx",0)
+                    if limits == 0:
+                        self.limitsx = False
+                    limitss = self.db.get(self.name, "limitss", "")
+                    await self.client.send_message("mlimits", f"Перевести {player} {limitss}")
+                    await asyncio.sleep(dly)
+                limits = limmm
+                limmmm = int(limits) - int(limitsr)
+                self.db.set(self.name,"limmm", limmmm)
+                if limmmm == 0:
+                    await self.client.send_message(message.peer_id, f"✅ <b>Все лимиты игроку <code>{player}</code> переведены:</b> <code>{limits}</code>")
+                if message.out:
+                    await message.delete()
+        else:
+            utils.answer(message, f"🚫 <b>| Ошибка!\n👉 | Все лимиты переведены</b>")
     @loader.command()
     async def lchk(self,message):
         '''- Посмотреть сколько осталось перевести лимитов и времени до конца перевода'''
