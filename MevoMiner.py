@@ -9,6 +9,7 @@ from ..inline.types import InlineCall
 
 @loader.tds
 class MevoMiner(loader.Module):
+    '''dev - Kepperok'''
     strings = {
         "name" : "MevoMiner"
     }
