@@ -16,7 +16,7 @@ class mattk(loader.Module):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "dly", 1.0,
-                lambda: "куку",
+                lambda: "Задержка атаки",
                 validator=loader.validators.Float()
             ),
             loader.ConfigValue(
