@@ -137,7 +137,7 @@ class mlimits(loader.Module):
         args = self.db.get(self.name, "args1", None)
         limitp = self.config["Sum"]
         dly = self.config["dly"]
-        limmm = int(limitsf) - int(limitsr)+
+        limmm = int(limitsf) - int(limitsr)
         limits = limmm
         if limits > 0:
             self.limitsx = True
