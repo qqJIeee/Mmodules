@@ -140,10 +140,10 @@ class mlimits(loader.Module):
         limmm = int(limitsf) - int(limitsr)
         self.limitsx = True
         limits = limmm
-        await asyncio.sleep(1)
-        await self.client.send_message("@mine_evo_bot", f"Перевести {player} {limitp}")
-        await utils.answer(message, f"💸 Продолжаю перевод лимитов игроку <code>{player}</code>\nОсталось перевести : <code>{limmm}</code>")
         if limits > 0:
+            await asyncio.sleep(1)
+            await self.client.send_message("@mine_evo_bot", f"Перевести {player} {limitp}")
+            await utils.answer(message, f"💸 Продолжаю перевод лимитов игроку <code>{player}</code>\nОсталось перевести : <code>{limmm}</code>")
             if self.limitsx:
                 while self.limitsx:
                     limits -= 1
