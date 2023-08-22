@@ -7,6 +7,8 @@ from telethon.tl.types import Message, ChatAdminRights
 from telethon import functions
 import datetime
 import time
+
+
 @loader.tds
 class mstats(loader.Module):
     '''dev - @Kepperok | Idea - @V0r06ey'''
@@ -115,11 +117,6 @@ class mstats(loader.Module):
         timee = time.time()
         self.set("timee",timee)
         await utils.answer(message, "Данные в базе данных сброшены")
-    @loader.command()
-    async def mstime(self,message):
-        '''- Сбросить время не сбрасывая датабазу'''
-        timee = time.time()
-        self.set("timee",timee)
     @loader.watcher()
     async def watcher(self, message):
         kt1 = self.get("kt1",0)
