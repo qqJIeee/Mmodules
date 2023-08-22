@@ -143,7 +143,7 @@ class mlimits(loader.Module):
         await asyncio.sleep(1)
         await self.client.send_message("@mine_evo_bot", f"Перевести {player} {limitp}")
         await utils.answer(message, f"💸 Продолжаю перевод лимитов игроку <code>{player}</code>\nОсталось перевести : <code>{limmm}</code>")
-        if limits >= 0:
+        if limits > 0:
             if self.limitsx:
                 while self.limitsx:
                     limits -= 1
@@ -163,7 +163,7 @@ class mlimits(loader.Module):
                 if message.out:
                     await message.delete()
         else:
-            utils.answer(message, f"🚫 <b>| Ошибка!\n👉 | Все лимиты переведены</b>")
+            await utils.answer(message, f"🚫 <b>| Ошибка!\n👉 | Все лимиты переведены</b>")
     @loader.command()
     async def lchk(self,message):
         '''- Посмотреть сколько осталось перевести лимитов и времени до конца перевода'''
