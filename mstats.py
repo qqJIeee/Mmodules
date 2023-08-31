@@ -1727,9 +1727,9 @@ class mstats(loader.Module):
     async def ianfd(self,call: InlineCall):
         shdp = self.get('shdp')
         bspd = self.get('bspd')
-        fppd = shdp + bspd + ppthxd + pthxd 
         pthxd = self.get("pthxd",0)
         ppthxd = self.get("ppthxd",0)
+        fppd = shdp + bspd + ppthxd + pthxd 
         crdd = self.get('crdd', 0)
         await call.edit(
             text=f"<b><emoji document_id=5033104253846029290>📚</emoji> | Прочее :\n\n<emoji document_id=5447410659077661506>🌐</emoji> | Плазмы с 'thx' когда благодаришь ты : <code>{pthxd}</code>\n<emoji document_id=5447410659077661506>🌐</emoji> | Плазмы с 'thx' когда благодарят тебя : <code>{ppthxd}</code>\n<emoji document_id=5431783411981228752>🎆</emoji> | Плазма за сегодня: <code>{fppd}</code>\n💳 | Перечислинные кредиты: </b><code>{crdd}</code>",
