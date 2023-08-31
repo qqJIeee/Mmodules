@@ -16,6 +16,8 @@ class mstats(loader.Module):
         "name" : "mstats"
     }
     async def client_ready(self):
+        if self.get('timee') == None:
+            self.set('timee', time.time())
         self._backup_channel, _ = await utils.asset_channel(
             self._client,
             "mstats",
