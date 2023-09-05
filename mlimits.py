@@ -105,16 +105,10 @@ class mlimits(loader.Module):
                             await asyncio.sleep(dly)
                         except errors.FloodWaitError as f:
                             self.limitsx = False
-                            se = f.seconds 
                             see = se + 5
                             if self.get('fw'):
-                                await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji> |<b> Вы получили FloodWait на <code>{se}</code> сек.</b>\n\n✅ | <b>Перевод лимитов будет автоматически возобновлён после FloodWait</b>")
-                                await message.forward_to('hikka-logs')
                                 await asyncio.sleep(see)
                                 await self.mcon(message)
-                            else:
-                                await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji> |<b> Вы получили FloodWait на <code>{se}</code> сек.</b>")
-                                await message.forward_to('hikka-logs')
                         
                     if limits <= 0:
                         await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji> <b>Все лимиты игроку <code>{player}</code> переведены:</b> <code>{limitsf}</code>")
@@ -170,17 +164,10 @@ class mlimits(loader.Module):
                         await asyncio.sleep(dly)
                     except errors.FloodWaitError as f:
                         self.limitsx = False
-                        se = f.seconds 
                         see = se + 5
                         if self.get('fw'):
-                            await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji> |<b> Вы получили FloodWait на <code>{se}</code> сек.</b>\n\n✅ | <b>Перевод лимитов будет автоматически возобновлён после FloodWait</b>")
-                            await message.forward_to('hikka-logs')
                             await asyncio.sleep(see)
                             await self.mcon(message)
-                        else:
-                            await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji> |<b> Вы получили FloodWait на <code>{se}</code> сек.</b>")
-                            await message.forward_to('hikka-logs')
-
                 if limits <= 0:
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji> <b>Все лимиты игроку <code>{player}</code> переведены:</b> <code>{limitsf}</code>")
                 limits = limmm
