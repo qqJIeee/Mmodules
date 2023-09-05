@@ -90,7 +90,7 @@ class MevoMiner(loader.Module):
             cmd = f'{utils.escape_html(self.get_prefix())}{inspect.currentframe().f_code.co_name} {utils.get_args_raw(message)}'
         else:
             await utils.answer(message, f'<emoji document_id=5240241223632954241>🚫</emoji><b> Ошибка | {cmd}\nУкажите значение которое хотите установить')
-        if args > 1:
+        if len(args) > 1:
             await utils.answer(message, f'<emoji document_id=5240241223632954241>🚫</emoji><b> Ошибка | {cmd}\nВы указали больше одного аргумента')
         zz = args[0]    
         try:
