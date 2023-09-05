@@ -59,13 +59,8 @@ class MevoMiner(loader.Module):
                 se = f.seconds 
                 see = se + 5
                 if self.get('fw'):
-                    await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji> |<b> Вы получили FloodWait на <code>{se}</code> сек.</b>\n\n✅ | <b>Копание будет автоматически включено после FloodWait</b>")
-                    await message.forward_to('hikka-logs')
                     await asyncio.sleep(see)
                     await self.mmm(message)
-                else:
-                    await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji> |<b> Вы получили FloodWait на <code>{se}</code> сек.</b>")
-                    await message.forward_to('hikka-logs')
     @loader.watcher()
     async def bosses_fw(self,message):
         dly = self.get('dly')
