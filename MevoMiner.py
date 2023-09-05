@@ -4,7 +4,7 @@ import asyncio
 from telethon.tl.types import Message, ChatAdminRights
 from telethon import functions, TelegramClient, errors
 from ..inline.types import InlineCall
-
+import inspect
 
 @loader.tds
 class MevoMiner(loader.Module):
