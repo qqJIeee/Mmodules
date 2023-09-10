@@ -9,6 +9,7 @@ import inspect
 
 @loader.tds
 class maboost(loader.Module):
+    '''Модуль для автоматической активации бустеров в боте MineEvo'''
     strings = {
         "name": "maboost"
     }
