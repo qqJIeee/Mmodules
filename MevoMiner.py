@@ -37,9 +37,10 @@ class MevoMiner(loader.Module):
         
         if self.get('mm'):
             await self.client.send_message(message.chat_id, "⛏ <b>Копание включено</b>")
+            await message.delete()
         else:
             await self.client.send_message(message.chat_id, "⛏ <b>Копание выключено</b>")
-
+            await message.delete()
         while self.get('mm'):
             dly = self.get('dly')
             try:
