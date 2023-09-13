@@ -30,15 +30,6 @@ class MevoMiner(loader.Module):
         if s == None:
             self.set('fw', False)
 
-
-        self._backup_channel, _ = await utils.asset_channel(
-        self._client,
-        "hikka-logs",
-        "Логи юзербота",
-        silent=True,
-        archive=False,
-        _folder="hikka",
-    )
     @loader.command()
     async def mmm(self,message):
         '''- Включить/выключить копание'''
