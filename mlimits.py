@@ -147,7 +147,7 @@ class mlimits(loader.Module):
                 self.limitsx = True
                 await asyncio.sleep(1)
                 await self.client.send_message("@mine_evo_bot", f"Перевести {player} {limitp}")
-                await utils.answer(message, f"<emoji document_id=5215239948420003628>💵</emoji> Продолжаю перевод лимитов игроку <code>{player}</code>\nОсталось перевести : <code>{limmm}</code>")
+                await self.client.send_message(message.chat_id, f"<emoji document_id=5215239948420003628>💵</emoji> Продолжаю перевод лимитов игроку <code>{player}</code>\nОсталось перевести : <code>{limmm}</code>")
                 while self.limitsx:
                     dly = self.get('dly')
                     limits -= 1
@@ -158,8 +158,6 @@ class mlimits(loader.Module):
                         self.limitsx = False
                     limitss = self.db.get(self.name, "limitss", "")
                     try:
-                        if self.get('ff'):
-                            raise errors.FloodWaitError(10)
                         await self.client.send_message("mlimits", f"Перевести {player} {limitss}")
                         await asyncio.sleep(dly)
                     except errors.FloodWaitError as f:
