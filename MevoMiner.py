@@ -36,9 +36,9 @@ class MevoMiner(loader.Module):
         self.set('mm', not self.get('mm'))
         
         if self.get('mm'):
-            await utils.answer(message, "⛏ <b>Копание включено</b>")
+            await self.client.send_message(message.chat_id, "⛏ <b>Копание включено</b>")
         else:
-            await utils.answer(message, "⛏ <b>Копание выключено</b>")
+            await self.client.send_message(message.chat_id, "⛏ <b>Копание выключено</b>")
 
         while self.get('mm'):
             dly = self.get('dly')
@@ -46,7 +46,7 @@ class MevoMiner(loader.Module):
                 await self.client.send_message("@mine_evo_bot", "коп")
                 await asyncio.sleep(dly)
             except errors.FloodWaitError as f:
-                await self.mmm(message)
+                self.set('mm', False)
                 se = f.seconds 
                 see = se + 5
                 if self.get('fw'):
