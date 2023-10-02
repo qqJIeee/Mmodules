@@ -420,7 +420,7 @@ class mstats(loader.Module):
             self.set('dkktd', dkktd)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "передал(а) тебе" in message.text and "🌌" in message.text:
             zzvc = message.text.index("🌌 Звёздный Кейс</b>  ") + len("🌌 Звёздный Кейс</b>  ")
-            zzzvc = message.text.index("шт.",zzvc)
+            zzzvc = message.text.index("<i>шт.",zzvc)
             zzvcr = message.text[zzvc:zzzvc]
             zvv += int(zzvcr)
             zvvd += int(zzvcr)
