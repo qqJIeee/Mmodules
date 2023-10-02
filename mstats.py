@@ -418,9 +418,9 @@ class mstats(loader.Module):
             dkktd += int(dkkrcr)
             self.set('dkkt', dkkt)
             self.set('dkktd', dkktd)
-        if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "передал(а) тебе" in message.text and "🌌" in message.text:
-            zzvc = message.text.index("🌌 Звёздный Кейс</b>  ") + len("🌌 Звёздный Кейс</b>  ")
-            zzzvc = message.text.index("<i>шт.",zzvc)
+        if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "передал(а) тебе" in message.raw_text and "🌌" in message.raw_text:
+            zzvc = message.text.index("🌌 Звёздный Кейс  ") + len("🌌 Звёздный Кейс  ")
+            zzzvc = message.text.index("шт.",zzvc)
             zzvcr = message.text[zzvc:zzzvc]
             zvv += int(zzvcr)
             zvvd += int(zzvcr)
