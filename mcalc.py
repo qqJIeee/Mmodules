@@ -43,9 +43,9 @@ class mcalc(loader.Module):
                 d = (needed - 1) * 5000
                 b = (f + d) / 2 * (needed - current)
             if n == 1:
-                b = needed * 5000
+                b = current * 5000
             if n == 2:
-                b = needed * 5000 + (current + 1) * 5000
+                b = current * 5000 + (current + 1) * 5000
             await asyncio.sleep(0.4)    
             await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>...\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?')
             await asyncio.sleep(0.4)
@@ -74,7 +74,9 @@ class mcalc(loader.Module):
             n = needed - current
             form = needed - 1
             mop = 1 + 0.1 * needed
-            mel = 10 + 5 * needed
+            mel = 10 + 5 * (needed - 1)
+            if needed => 9:
+                mel = 50
             if n > 2:
                 f = current * 10000
                 d = (needed - 1) * 10000
@@ -83,11 +85,11 @@ class mcalc(loader.Module):
                 mdlp = (f + d) / 2 * (needed - current)
                 mdls = (fs + ds) / 2 * (needed - current)
             if n == 1:
-                mdlp = needed * 10000
-                mdls = needed * 10
+                mdlp = current * 10000
+                mdls = current * 10
             if n == 2:
-                mdlp = needed * 10000 + (current + 1) * 10000 
-                mdls = needed * 10 + (current + 1) * 10
+                mdlp = current * 10000 + (current + 1) * 10000 
+                mdls = current * 10 + (current + 1) * 10
             await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>.\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
             await asyncio.sleep(0.4)
             await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>..\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
