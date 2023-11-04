@@ -75,7 +75,7 @@ class mcalc(loader.Module):
             form = needed - 1
             mop = 1 + 0.1 * needed
             mel = 10 + 5 * (needed - 1)
-            if needed => 9:
+            if needed >= 9:
                 mel = 50
             if n > 2:
                 f = current * 10000
