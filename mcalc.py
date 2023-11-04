@@ -101,7 +101,7 @@ class mcalc(loader.Module):
                 await asyncio.sleep(0.4)
                 await utils.answer(message, f'<b>✅ Успешно!</b>\n\n⚙️ | <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 | <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{int(mdlp)}</code>\n🔩 | <b>Нужно скрапа: <code>{int(mdls)}</code></b>\n🍀 | <b>Удача/Эффективность: <code>{mel}%</code>\n🧱 | Руда/Плазма</b>: <code>{mop}x</code>')
             except OverflowError:
-                await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji><b> Ошибка | <code>{cmd}</code>\nВы указали слишком большой уровень бура</b>")
+                await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji><b> Ошибка | <code>{cmd}</code>\nВы указали слишком большой уровень модуля</b>")
 
 
 
