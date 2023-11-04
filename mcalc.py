@@ -49,7 +49,7 @@ class mcalc(loader.Module):
             await asyncio.sleep(0.4)    
             await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>...\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?')
             await asyncio.sleep(0.4)
-            await utils.answer(message, f'<b>✅ Успешно!</b>\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{b}</code>')
+            await utils.answer(message, f'<b>✅ Успешно!</b>\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{int(b)}</code>')
 
     @loader.command()
     async def mcl(self,message: Message):
@@ -96,7 +96,7 @@ class mcalc(loader.Module):
             await asyncio.sleep(0.4)    
             await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>...\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
             await asyncio.sleep(0.4)
-            await utils.answer(message, f'<b>✅ Успешно!</b>\n\n⚙️ | <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 | <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{mdlp}</code>\n🔩 | <b>Нужно скрапа: <code>{mdls}</code></b>\n🍀 | <b>Удача/Эффективность: <code>{mel}%</code>\n🧱 | Руда/Плазма</b>: <code>{mop}x</code>')
+            await utils.answer(message, f'<b>✅ Успешно!</b>\n\n⚙️ | <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 | <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{int(mdlp)}</code>\n🔩 | <b>Нужно скрапа: <code>{int(mdls)}</code></b>\n🍀 | <b>Удача/Эффективность: <code>{mel}%</code>\n🧱 | Руда/Плазма</b>: <code>{mop}x</code>')
 
 
 
