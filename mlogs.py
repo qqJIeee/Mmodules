@@ -190,7 +190,7 @@ class mlogs(loader.Module):
                     await self.client.send_message('mlogs', self.get('pss').format(colvo=colvo))
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Сумка с Предметами" in message.raw_text:    
-                if self.get('ss')
+                if self.get('ss'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
