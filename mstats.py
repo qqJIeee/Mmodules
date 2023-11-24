@@ -224,7 +224,7 @@ class mstats(loader.Module):
             self.set('dkd', 0)
             self.set('dkktd', 0)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Найден" in message.raw_text:
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Конверт" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "✉" in message.raw_text and "Конверт" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -233,7 +233,7 @@ class mstats(loader.Module):
                 ktd1 += 1
                 self.set("ktd1", ktd1)
                 self.set("kt1",kt1)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Редкий Конверт." in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🧧" in message.raw_text and "Редкий Конверт." in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -242,7 +242,7 @@ class mstats(loader.Module):
                 rktd1 += colvo
                 self.set("rktd1", rktd1)
                 self.set("rkt1",rkt1)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "📦" in message.raw_text and "Кейс" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -251,7 +251,7 @@ class mstats(loader.Module):
                 kd1 += 1
                 self.set("kd1", kd1)
                 self.set("k1",k1)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Редкий Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗳" in message.raw_text and "Редкий Кейс" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -260,7 +260,7 @@ class mstats(loader.Module):
                 rkd1 += 1
                 self.set("rkd1", rkd1)
                 self.set("rk1",rk1)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Мифический Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🕋" in message.raw_text and "Мифический Кейс" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -290,7 +290,7 @@ class mstats(loader.Module):
                 self.set('ss1', ss1)
                 self.set('ssd', ssd)
             
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Кристальный Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💎" in message.raw_text and "Кристальный Кейс" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -299,7 +299,7 @@ class mstats(loader.Module):
                 krd1 += colvo
                 self.set("krd1", krd1)
                 self.set("kr1",kr1)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Дайс Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🎲" in message.raw_text and "Дайс Кейс" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -308,7 +308,7 @@ class mstats(loader.Module):
                 dkd += colvo
                 self.set('dk', dk)
                 self.set('dkd', dkd)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Звёздный Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🌌" in message.raw_text and "Звёздный Кейс" in message.raw_text or hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
