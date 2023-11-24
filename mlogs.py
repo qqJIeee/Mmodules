@@ -161,21 +161,21 @@ class mlogs(loader.Module):
 
                     await self.client.send_message("mlogs", self.get('rkts').format(colvo=colvo))
             
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "📦" and "Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "📦" in message.raw_text and "Кейс" in message.raw_text:
                 if self.get('k'):              
                     colpt = r"\d+"
                     colvo= re.findall(colpt, message.raw_text)
 
                     await self.client.send_message("mlogs", self.get('ks').format(colvo=colvo))
             
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗳" and "Редкий Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗳" in message.raw_text and "Редкий Кейс" in message.raw_text:
                 if self.get('rk'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
                     await self.client.send_message("mlogs", self.get('rks').format(colvo=colvo))
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🕋" and "Мифический Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🕋" in message.raw_text and "Мифический Кейс" in message.raw_text:
                 if self.get('mif'):         
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
@@ -196,25 +196,28 @@ class mlogs(loader.Module):
                     colvo = search[0]
                     await self.client.send_message('mlogs', self.get('sss').format(colvo=colvo))
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💎" and "Кристальный Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💎" in message.raw_text and "Кристальный Кейс" in message.raw_text:
                if self.get('kr'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
                     await self.client.send_message("mlogs", self.get('krs').format(colvo=colvo))
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🎲" and "Дайс Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🎲" in message.raw_text and "Дайс Кейс" in message.raw_text:
                 if self.get('dk'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
                     await self.client.send_message("mlogs", self.get('dks').format(colvo=colvo))  
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🌌" and "Звёздный Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🌌" in message.raw_text and "Звёздный Кейс" in message.raw_text or hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
                 if self.get('zv'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
-                    colvo = search[0]
+                    if search:
+                        colvo = search[0]
+                    else:
+                        colvo = 1
                     await self.client.send_message("mlogs", self.get('zvs').format(colvo=colvo))
         
         if self.get('trade'):                
