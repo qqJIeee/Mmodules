@@ -233,7 +233,7 @@ class mstats(loader.Module):
                 ktd1 += 1
                 self.set("ktd1", ktd1)
                 self.set("kt1",kt1)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🧧" in message.raw_text and "Редкий Конверт." in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🧧" in message.raw_text and "Редкий Конверт" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
