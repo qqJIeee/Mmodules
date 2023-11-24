@@ -157,14 +157,14 @@ class mlogs(loader.Module):
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🧧" in message.raw_text and "Редкий Конверт" in message.raw_text:
                 if self.get('rkt'):     
                     colpt = r"\d+"
-                    colvo= re.findall(colpt, message.raw_text)
+                    colvo= re.search(colpt, message.raw_text)
 
                     await self.client.send_message("mlogs", self.get('rkts').format(colvo=colvo))
             
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "📦" in message.raw_text and "Кейс" in message.raw_text:
                 if self.get('k'):              
                     colpt = r"\d+"
-                    colvo= re.findall(colpt, message.raw_text)
+                    colvo= re.search(colpt, message.raw_text)
 
                     await self.client.send_message("mlogs", self.get('ks').format(colvo=colvo))
             
