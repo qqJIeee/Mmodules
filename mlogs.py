@@ -143,7 +143,7 @@ class mlogs(loader.Module):
                 channel=self._backup_channel,
                 user_id=self.inline.bot.id,
                 admin_rights=ChatAdminRights(ban_users=True, post_messages=True, edit_messages=True),
-                rank="Hikka",
+                rank="Logger",
             )
           )
             
