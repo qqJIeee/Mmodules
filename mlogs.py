@@ -147,7 +147,7 @@ class mlogs(loader.Module):
             )
           )
 
-        t = await self.inline.bot.get_me
+        t = await self.inline.bot.me
         hikka = t["first_name"]
         h = await self.client.get_entity("mlogs")
         chid = h.id
