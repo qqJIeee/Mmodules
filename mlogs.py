@@ -372,7 +372,7 @@ class mlogs(loader.Module):
                     self.set('pss', stri)
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Изменена строка 💼 <i>Портфель с Эскизами</i> на</b>:\n{self.get('pss')}")
 
-            elif type == "миф":
+            elif type == "ссп":
                 if stri == None:
                     self.set('sss', "<i>A pleasant surprise!</i>\n👜 <b>Сумка с предметами +<code>{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('sss')}")
