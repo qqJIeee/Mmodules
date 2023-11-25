@@ -270,7 +270,7 @@ class mstats(loader.Module):
                 self.set("mifd1", mifd1)
                 self.set("mif1", mif1)
             
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Портфель с Эскизами" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Портфель" in message.raw_text:
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
@@ -280,7 +280,7 @@ class mstats(loader.Module):
                 self.set('ps', ps)
                 self.set('psd', psd)
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Сумка с Предметами" in message.raw_text:    
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Сумка" in message.raw_text:    
                 colpt = r"\d+"
                 search = re.search(colpt, message.raw_text)
                 colvo = int(search[0])
