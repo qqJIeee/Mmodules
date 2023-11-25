@@ -146,7 +146,8 @@ class mlogs(loader.Module):
                 rank="Logger",
             )
           )
-            
+
+        n = self.client.get_entity(self.inline.bot.id)
     @loader.command()
     async def strs(self, m: Message):
         '''Строки'''
