@@ -137,6 +137,15 @@ class mlogs(loader.Module):
             archive=True,
             _folder="hikka",
         )
+
+    await self.client(functions.channels.InviteToChannelRequest(self._backup_channel, [self.inline.bot.id]))
+        await self.client(functions.channels.EditAdminRequest(
+                channel=self._backup_channel,
+                user_id=self.inline.bot.id,
+                admin_rights=ChatAdminRights(ban_users=True, post_messages=True, edit_messages=True),
+                rank="Hikka",
+            )
+          )
             
     @loader.command()
     async def strs(self, m: Message):
