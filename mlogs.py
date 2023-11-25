@@ -147,8 +147,8 @@ class mlogs(loader.Module):
             )
           )
 
-        t = await self.inline.bot.me
-        hikka = t["first_name"]
+        t = await self.client.get_entity(self.inline.bot.id)
+        hikka = t.first_name
         h = await self.client.get_entity("mlogs")
         chid = h.id
         async for mess in self.client.iter_messages(chid, search=f"You added {hikka}"):
