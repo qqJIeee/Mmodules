@@ -160,7 +160,7 @@ class mlogs(loader.Module):
 
     @loader.watcher()
     async def watcher(self, message):
-        chid = int(self.get("chid")
+        chid = int(self.get("chid"))
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Найден" in message.raw_text:
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "✉" in message.raw_text and "Конверт" in message.raw_text:
                 if self.get('kt'):
