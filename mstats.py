@@ -532,8 +532,8 @@ class mstats(loader.Module):
             self.set('zvv', zvv)
             self.set('zvvd', zvvd)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗡" in message.raw_text and "нанес(ла) удар" in message.raw_text:
-            dpt = "удар (-(.*?) оз"
-            search = re.search(dpt, message.raw_text, re.DOTALL)
+            dpt = "<b>-(.*?) оз"
+            search = re.search(dpt, message.text, re.DOTALL)
             ddmgr = search.group(1)
 
             bdmg += int(ddmgr)
@@ -541,8 +541,8 @@ class mstats(loader.Module):
             self.set("bddmg", bddmg)
             self.set("bdmg",bdmg)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💢" in message.raw_text and "нанес(ла) крит. удар" in message.raw_text:
-            kdpt = "удар (-(.*?) оз"
-            search = re.search(kdpt, message.raw_text, re.DOTALL)
+            kdpt = "<b>-(.*?) оз"
+            search = re.search(kdpt, message.text, re.DOTALL)
             kddmgr = search.group(1)
 
             bkdmg += int(kddmgr)
