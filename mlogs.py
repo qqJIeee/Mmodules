@@ -72,34 +72,34 @@ class mlogs(loader.Module):
         if self.get('tradett') == None:
             self.set('tradett', "<b><code>{nick}</code> дал тебе</b>:\n<i>{cases}</i>")
             
-        if self.get('kts') == None:
+        if self.get('kts') == None or "{colvo}" not in self.get('kts'):
             self.set("kts", "✉️ <b>Конверт +<code>{colvo}</code></b>")
 
-        if self.get('rkts') == None:
+        if self.get('rkts') == None or "{colvo}" not in self.get('rkts'):
             self.set('rkts', "🧧 <b>Редкий Конверт +<code>{colvo}</code></b>")
 
-        if self.get('ks') == None:
+        if self.get('ks') == None or "{colvo}" not in self.get('ks'):
             self.set('ks', "📦 <b>Кейс +<code>{colvo}</code></b>")
 
-        if self.get('rks') == None:
+        if self.get('rks') == None or "{colvo}" not in self.get('rks'):
             self.set('rks', "🗳 <b>Редкий Кейс +<code>{colvo}</code></b>")
         
-        if self.get('mifs') == None:
+        if self.get('mifs') == None or "{colvo}" not in self.get('mifs'):
             self.set('mifs', "<i>Грац!</i>\n🕋 <b>Мифический Кейс +<code>{colvo}</code>!</b>")
 
-        if self.get('krs') == None:
+        if self.get('krs') == None or "{colvo}" not in self.get('krs'):
             self.set("krs", "<i>Congratulations!</i>\n💎 <b>Кристальный кейс +<code>{colvo}</code>!</b>")
 
-        if self.get('dks') == None:
+        if self.get('dks') == None or "{colvo}" not in self.get('dks'):
             self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +1<code>{colvo}</code></b>")
 
-        if self.get('zvs') == None:
+        if self.get('zvs') == None or "{colvo}" not in self.get('zvs'):
             self.set('zvs', "<i>WOW, you are lucky!</i>\n🌌 <b>Звездный Кейс +<code>{colvo}</code></b>")
 
-        if self.get('pss') == None:
+        if self.get('pss') == None or "{colvo}" not in self.get('pss'):
             self.set('pss', "<i>Luck is on your side!</i>\n💼 <b>Портфель с Эскизами +<code>{colvo}</code></b>")
 
-        if self.get('sss') == None:
+        if self.get('sss') == None or "{colvo}" not in self.get('sss'):
             self.set('sss', "<i>A pleasant surprise!</i>\n👜 <b>Сумка с предметами +<code>{colvo}</code></b>")
 
         if self.get('boostersd1.5') == None:
