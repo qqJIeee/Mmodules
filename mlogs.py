@@ -149,7 +149,7 @@ class mlogs(loader.Module):
           )
 
         mess = await self.client.send_message("mlogs", ".")
-        self.set("chid", -100mess.peer_id.channel_id)
+        self.set("chid", f"-100{mess.peer_id.channel_id}")
         await mess.delete()
 
     @loader.command()
@@ -160,7 +160,7 @@ class mlogs(loader.Module):
 
     @loader.watcher()
     async def watcher(self, message):
-        chid = self.get("chid")
+        chid = int(self.get("chid")
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Найден" in message.raw_text:
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "✉" in message.raw_text and "Конверт" in message.raw_text:
                 if self.get('kt'):
