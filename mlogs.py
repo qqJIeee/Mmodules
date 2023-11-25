@@ -160,26 +160,27 @@ class mlogs(loader.Module):
 
     @loader.watcher()
     async def watcher(self, message):
+        chid = self.get("chid")
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Найден" in message.raw_text:
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "✉" in message.raw_text and "Конверт" in message.raw_text:
                 if self.get('kt'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message("mlogs", self.get('kts').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('kts').format(colvo=colvo))
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🧧" in message.raw_text and "Редкий Конверт" in message.raw_text:
                 if self.get('rkt'):     
                     colpt = r"\d+"
-                    colvo= re.search(colpt, message.raw_text)
-
-                    await self.client.send_message("mlogs", self.get('rkts').format(colvo=colvo))
+                    search = re.search(colpt, message.raw_text)
+                    colvo = search[0]
+                    await self.inline.bot.send_message(chid, self.get('rkts').format(colvo=colvo))
             
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "📦" in message.raw_text and "Кейс" in message.raw_text:
                 if self.get('k'):              
                     colpt = r"\d+"
-                    colvo= re.search(colpt, message.raw_text)
-
+                    search = re.search(colpt, message.raw_text)
+                    colvo = search[0]
                     await self.client.send_message("mlogs", self.get('ks').format(colvo=colvo))
             
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗳" in message.raw_text and "Редкий Кейс" in message.raw_text:
