@@ -149,7 +149,7 @@ class mlogs(loader.Module):
           )
 
     def __init__(self):
-        t = self.client.send_message("mlogs", ".")
+        t = client.send_message("mlogs", ".")
         self.chid = t.peer_id.channel_id
         t.delete()
 
