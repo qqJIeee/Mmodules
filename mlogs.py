@@ -204,7 +204,7 @@ class mlogs(loader.Module):
                     colvo = search[0]
                     await self.inline.bot.send_message(chid, self.get('pss').format(colvo=colvo))
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Сумка" in message.raw_text or message.chat_id == -1001951117960 and "Портфель" in message.raw_text:    
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Сумка" in message.raw_text or message.chat_id == -1001951117960 and "Сумка" in message.raw_text:    
                 if self.get('ss'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
