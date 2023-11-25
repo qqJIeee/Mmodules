@@ -190,7 +190,7 @@ class mlogs(loader.Module):
                     colvo = search[0]
                     await self.inline.bot.send_message(chid, self.get('rks').format(colvo=colvo))
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🕋" in message.raw_text and "Мифический Кейс" in message.raw_text or hasattr(message, 'from_id') and message.from_id == 5123958155 and message.chat_id == -1001951117960 and "Мифический Кейс" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🕋" in message.raw_text and "Мифический Кейс" in message.raw_text or message.chat_id == -1001951117960 and "Мифический Кейс" in message.raw_text:
                 if self.get('mif'):         
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
