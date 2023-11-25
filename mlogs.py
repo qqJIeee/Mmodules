@@ -149,7 +149,7 @@ class mlogs(loader.Module):
           )
 
         mess = await self.client.send_message("mlogs", ".")
-        self.set("chid", mess.peer_id.channel_id)
+        self.set("chid", -100mess.peer_id.channel_id)
         await mess.delete()
 
     @loader.command()
