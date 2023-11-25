@@ -147,13 +147,6 @@ class mlogs(loader.Module):
             )
           )
 
-        n = self.client.get_entity(self.inline.bot.id)
-        hikka = n.first_name 
-        t = self.client.get_entity("mlogs")
-        chid = t.id
-        async for mess in self.client.iter_messages(chid, search=f"You added {hikka}"):
-            mess_id = mess.id
-        await self.client.delete_messages(chid, [mess_id])
     @loader.command()
     async def strs(self, m: Message):
         '''Строки'''
