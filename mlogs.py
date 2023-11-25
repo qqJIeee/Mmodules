@@ -148,6 +148,10 @@ class mlogs(loader.Module):
             )
           )
 
+        mess = await self.client.send_message("mlogs", ".")
+        self.set("chid", mess.peer_id.channel_id)
+        await mess.delete()
+
     @loader.command()
     async def strs(self, m: Message):
         '''Строки'''
