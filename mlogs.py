@@ -181,49 +181,49 @@ class mlogs(loader.Module):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message("mlogs", self.get('ks').format(colvo=colvo))
+                    await self.inlihe.bot.send_message(chid, self.get('ks').format(colvo=colvo))
             
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗳" in message.raw_text and "Редкий Кейс" in message.raw_text:
                 if self.get('rk'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message("mlogs", self.get('rks').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('rks').format(colvo=colvo))
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🕋" in message.raw_text and "Мифический Кейс" in message.raw_text:
                 if self.get('mif'):         
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message("mlogs", self.get('mifs').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('mifs').format(colvo=colvo))
             
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Портфель" in message.raw_text:
                 if self.get('ps'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message('mlogs', self.get('pss').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('pss').format(colvo=colvo))
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Сумка" in message.raw_text:    
                 if self.get('ss'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message('mlogs', self.get('sss').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('sss').format(colvo=colvo))
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💎" in message.raw_text and "Кристальный Кейс" in message.raw_text:
                if self.get('kr'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message("mlogs", self.get('krs').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('krs').format(colvo=colvo))
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🎲" in message.raw_text and "Дайс Кейс" in message.raw_text:
                 if self.get('dk'):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.client.send_message("mlogs", self.get('dks').format(colvo=colvo))  
+                    await self.inline.bot.send_message(chid, self.get('dks').format(colvo=colvo))  
 
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🌌" in message.raw_text and "Звёздный Кейс" in message.raw_text or hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
                 if self.get('zv'):
@@ -233,7 +233,7 @@ class mlogs(loader.Module):
                         colvo = search[0]
                     else:
                         colvo = 1
-                    await self.client.send_message("mlogs", self.get('zvs').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('zvs').format(colvo=colvo))
         
         if self.get('trade'):                
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "передал(а) тебе" in message.raw_text:
@@ -246,30 +246,30 @@ class mlogs(loader.Module):
                 nick = nickname.group(1)
                 cases = kol.group(1)
 
-                await self.client.send_message("mlogs", self.get('tradett').format(nick=nick, cases=cases))
+                await self.inline.bot.send_message(chid, self.get('tradett').format(nick=nick, cases=cases))
 
         
         if self.get('bosses'):
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "побежден игроком" in message.raw_text:
-                await self.client.send_message("mlogs", message.text)
+                await self.inline.bot.send_message(chid, message.text)
         
         if self.get('boosters'):
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×2.0!" in message.raw_text:
-                    await self.client.send_message("mlogs", self.get('boostersr2'))
+                    await self.inline.bot.send_message(chid, self.get('boostersr2'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×2.0!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersd2'))
+                await self.inline.bot.send_message(chid, self.get('boostersd2'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×1.5!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersd1.5'))
+                await self.inline.bot.send_message(chid, self.get('boostersd1.5'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×1.5!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersr1.5'))
+                await self.inline.bot.send_message(chid, self.get('boostersr1.5'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×2.5!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersd2.5'))
+                await self.inline.bot.send_message(chid, self.get('boostersd2.5'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×2.5!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersr2.5'))
+                await self.inline.bot.send_message(chid, self.get('boostersr2.5'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×3.0!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersr3'))
+                await self.inline.bot.send_message(chid, self.get('boostersr3'))
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×3.0!" in message.raw_text:
-                await self.client.send_message("mlogs", self.get('boostersd3'))
+                await self.inline.bot.send_message(chid, self.get('boostersd3'))
                 
         if self.get('credits'):
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💳" in message.raw_text and 'перечислил(а) тебе ' in message.raw_text:
@@ -282,7 +282,7 @@ class mlogs(loader.Module):
                 cred = kolvocredits.group(1)
                 nick = nickcredits.group(1)
 
-                await self.client.send_message("mlogs", self.get('creditss').format(cred=cred, nick=nick))
+                await self.inline.bot.send_message(chid, self.get('creditss').format(cred=cred, nick=nick))
             
             
     @loader.command()
