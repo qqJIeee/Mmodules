@@ -15,6 +15,7 @@ class mlogs(loader.Module):
     strings = {
         "name" : "mlogs", 
     }
+    
     async def client_ready(self):
         s = self.get('kt')
         if s == None:
@@ -147,13 +148,11 @@ class mlogs(loader.Module):
             )
           )
 
-        '''t = await self.client.get_entity(self.inline.bot.id)
-        hikka = t.first_name
-        h = await self.client.get_entity("mlogs")
-        chid = h.id
-        async for mess in self.client.iter_messages(chid, search=f"You added {hikka}"):
-            mess_id = mess.id
-        await self.client.delete_messages(chid, [mess_id])'''
+    def __init__(self):
+        t = self.client.send_message("mlogs", ".")
+        self.chid = t.peer_id.channel_id
+        t.delete()
+
     @loader.command()
     async def strs(self, m: Message):
         '''Строки'''
