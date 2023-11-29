@@ -161,6 +161,7 @@ class mlimits(loader.Module):
                         await self.client.send_message("mlimits", f"Перевести {player} {limitss}")
                         await asyncio.sleep(dly)
                     except errors.FloodWaitError as f:
+                        se = f.seconds
                         self.limitsx = False
                         see = se + 5
                         if self.get('fw'):
