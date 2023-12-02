@@ -412,7 +412,7 @@ class mstats(loader.Module):
             self.set("mmb",mmb)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💳" in message.text and 'перечислил(а) тебе ' in message.text:
             jj = message.text.index('перечислил(а) тебе ') + len('перечислил(а) тебе ')
-            jjj = message.text.index( 'кредитов')
+            jjj = message.text.index( 'эво')
             j = message.text[jj:jjj]
             crd += int(j)
             crdd += int(j)
