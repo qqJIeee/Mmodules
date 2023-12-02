@@ -387,7 +387,7 @@ class mstats(loader.Module):
             espt = "Эссенция +(.*?)</b>"
             match = re.search(espt, message.text, re.DOTALL)
             colvo = str(match.group(1)).replace("+",'')
-            colvo = int(match.group(1))
+            colvo = int(covlo)
 
             es += colvo
             esd += colvo
