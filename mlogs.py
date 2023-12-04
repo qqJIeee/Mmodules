@@ -187,7 +187,7 @@ class mlogs(loader.Module):
                     colpt = r"\d+"
                     search = re.search(colpt, message.raw_text)
                     colvo = search[0]
-                    await self.inlihe.bot.send_message(chid, self.get('ks').format(colvo=colvo))
+                    await self.inline.bot.send_message(chid, self.get('ks').format(colvo=colvo))
             
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "🗳" in message.raw_text and "Редкий Кейс" in message.raw_text:
                 if self.get('rk'):
