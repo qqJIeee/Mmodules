@@ -122,7 +122,6 @@ class mstats(loader.Module):
         bskld = self.get("bskld",0)
         mmb = self.get("mmb",0)
         es = self.get('es', 0)
-        es = self.get('es')
         pthx = self.get("pthx",0)
         kk = self.get("kk",0)
         miff = self.get("miff",0)
