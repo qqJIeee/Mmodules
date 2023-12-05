@@ -384,7 +384,7 @@ class mstats(loader.Module):
             self.set("bsrkbd", bsrkbd)
             self.set("rkb",rkb)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Эссенция +" in message.raw_text:
-            espt = "Эссенция +(.+)</b>"
+            espt = "Эссенция +(.*?)</b>"
             match = re.search(espt, message.text, re.DOTALL)
             colvo = str(match.group(1)).replace("+",'')
             colvo = int(colvo)
