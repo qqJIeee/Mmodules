@@ -154,7 +154,7 @@ class mlogs(loader.Module):
             )
           )
         
-        self.set("chid", self._backup_channel.id)
+        self.set("chid", int(f"-100{self._backup_channel.id}))
 
     @loader.command()
     async def strs(self, m: Message):
