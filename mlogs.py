@@ -153,10 +153,8 @@ class mlogs(loader.Module):
                 rank="Logger",
             )
           )
-
-        mess = await self.client.send_message("mlogs", ".")
-        self.set("chid", f"-100{mess.peer_id.channel_id}")
-        await mess.delete()
+        
+        self.set("chid", self._backup_channel.id)
 
     @loader.command()
     async def strs(self, m: Message):
