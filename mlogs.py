@@ -96,8 +96,7 @@ class mlogs(loader.Module):
         if self.get('krs') == None or "{colvo}" not in self.get('krs'):
             self.set("krs", "<i>Congratulations!</i>\n💎 <b>Кристальный кейс +<code>{colvo}</code>!</b>")
 
-        if self.get('dks') == None or "{colvo}" not in self.get('dks'):
-            self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +1<code>{colvo}</code></b>")
+        self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +<code>{colvo}</code></b>")
 
         if self.get('zvs') == None or "{colvo}" not in self.get('zvs'):
             self.set('zvs', "<i>WOW, you are lucky!</i>\n🌌 <b>Звездный Кейс +<code>{colvo}</code></b>")
@@ -415,7 +414,7 @@ class mlogs(loader.Module):
 
             elif type == "дк":
                 if stri == None:
-                    self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +1<code>{colvo}</code></b>")
+                    self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +<code>{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('dks')}")
                     return
                 if "{colvo}" not in stri:
