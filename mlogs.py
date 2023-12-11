@@ -79,33 +79,33 @@ class mlogs(loader.Module):
             self.set("tradeis", "<b><code>{nick}</code> дал тебе предмет</b>:\n<i>{item}")
             
         if self.get('kts') == None or "{colvo}" not in self.get('kts'):
-            self.set("kts", "✉️ <b>Конверт +<code>{colvo}</code></b>")
+            self.set("kts", "✉️ <b>Конверт <code>+{colvo}</code></b>")
 
         if self.get('rkts') == None or "{colvo}" not in self.get('rkts'):
-            self.set('rkts', "🧧 <b>Редкий Конверт +<code>{colvo}</code></b>")
+            self.set('rkts', "🧧 <b>Редкий Конверт <code>+{colvo}</code></b>")
 
         if self.get('ks') == None or "{colvo}" not in self.get('ks'):
-            self.set('ks', "📦 <b>Кейс +<code>{colvo}</code></b>")
+            self.set('ks', "📦 <b>Кейс <code>+{colvo}</code></b>")
 
         if self.get('rks') == None or "{colvo}" not in self.get('rks'):
-            self.set('rks', "🗳 <b>Редкий Кейс +<code>{colvo}</code></b>")
+            self.set('rks', "🗳 <b>Редкий Кейс <code>+{colvo}</code></b>")
         
         if self.get('mifs') == None or "{colvo}" not in self.get('mifs'):
-            self.set('mifs', "<i>Грац!</i>\n🕋 <b>Мифический Кейс +<code>{colvo}</code>!</b>")
+            self.set('mifs', "<i>Грац!</i>\n🕋 <b>Мифический Кейс <code>+{colvo}</code>!</b>")
 
         if self.get('krs') == None or "{colvo}" not in self.get('krs'):
-            self.set("krs", "<i>Congratulations!</i>\n💎 <b>Кристальный кейс +<code>{colvo}</code>!</b>")
+            self.set("krs", "<i>Congratulations!</i>\n💎 <b>Кристальный кейс <code>+{colvo}</code>!</b>")
 
-        self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +<code>{colvo}</code></b>")
+        self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик <code>+{colvo}</code></b>")
 
         if self.get('zvs') == None or "{colvo}" not in self.get('zvs'):
-            self.set('zvs', "<i>WOW, you are lucky!</i>\n🌌 <b>Звездный Кейс +<code>{colvo}</code></b>")
+            self.set('zvs', "<i>WOW, you are lucky!</i>\n🌌 <b>Звездный Кейс <code>+{colvo}</code></b>")
 
         if self.get('pss') == None or "{colvo}" not in self.get('pss'):
-            self.set('pss', "<i>Luck is on your side!</i>\n💼 <b>Портфель с Эскизами +<code>{colvo}</code></b>")
+            self.set('pss', "<i>Luck is on your side!</i>\n💼 <b>Портфель с Эскизами <code>+{colvo}</code></b>")
 
         if self.get('sss') == None or "{colvo}" not in self.get('sss'):
-            self.set('sss', "<i>A pleasant surprise!</i>\n👜 <b>Сумка с предметами +<code>{colvo}</code></b>")
+            self.set('sss', "<i>A pleasant surprise!</i>\n👜 <b>Сумка с предметами <code>+{colvo}</code></b>")
 
         if self.get('boostersd1.5') == None:
             self.set('boostersd1.5', "⚡️ <b>Буст денег 1.5 </b><i>+1</i>")
@@ -318,7 +318,7 @@ class mlogs(loader.Module):
 
             if type == "кт":
                 if stri == None:
-                    self.set('kts', "✉️ <b>Конверт +<code>{colvo}</code></b>")
+                    self.set('kts', "✉️ <b>Конверт <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('kts')}")
                     return
                 if "{colvo}" not in stri:
@@ -330,7 +330,7 @@ class mlogs(loader.Module):
             
             elif type == "ркт":
                 if stri == None:
-                    self.set('rkts', "🧧 <b>Редкий Конверт +<code>{colvo}</code></b>")
+                    self.set('rkts', "🧧 <b>Редкий Конверт <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('rkts')}")
                     return
                 if "{colvo}" not in stri:
@@ -342,7 +342,7 @@ class mlogs(loader.Module):
 
             elif type == "к":
                 if stri == None:
-                    self.set('ks', "📦 <b>Кейс +<code>{colvo}</code></b>")
+                    self.set('ks', "📦 <b>Кейс <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('ks')}")
                     return
                 if "{colvo}" not in stri:
@@ -354,7 +354,7 @@ class mlogs(loader.Module):
 
             elif type == "рк":
                 if stri == None:
-                    self.set('rks', "🗳 <b>Редкий Кейс +<code>{colvo}</code></b>")
+                    self.set('rks', "🗳 <b>Редкий Кейс <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('rks')}")
                     return
                 if "{colvo}" not in stri:
@@ -366,7 +366,7 @@ class mlogs(loader.Module):
             
             elif type == "миф":
                 if stri == None:
-                    self.set('mifs', "<i>Грац!</i>\n🕋 <b>Мифический Кейс +<code>{colvo}</code>!</b>")
+                    self.set('mifs', "<i>Грац!</i>\n🕋 <b>Мифический Кейс <code>+{colvo}</code>!</b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('mifs')}")
                     return
                 if "{colvo}" not in stri:
@@ -378,7 +378,7 @@ class mlogs(loader.Module):
 
             elif type == "псэ":
                 if stri == None:
-                    self.set('pss', "<i>Luck is on your side!</i>\n💼 <b>Портфель с Эскизами +<code>{colvo}</code></b>")
+                    self.set('pss', "<i>Luck is on your side!</i>\n💼 <b>Портфель с Эскизами <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('pss')}")
                     return
                 if "{colvo}" not in stri:
@@ -390,7 +390,7 @@ class mlogs(loader.Module):
 
             elif type == "ссп":
                 if stri == None:
-                    self.set('sss', "<i>A pleasant surprise!</i>\n👜 <b>Сумка с предметами +<code>{colvo}</code></b>")
+                    self.set('sss', "<i>A pleasant surprise!</i>\n👜 <b>Сумка с предметами <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('sss')}")
                     return
                 if "{colvo}" not in stri:
@@ -402,7 +402,7 @@ class mlogs(loader.Module):
 
             elif type == "кр":
                 if stri == None:
-                    self.set('krs', "<i>Congratulations!</i>\n💎 <b>Кристальный кейс +<code>{colvo}</code>!</b>")
+                    self.set('krs', "<i>Congratulations!</i>\n💎 <b>Кристальный кейс <code>+{colvo}</code>!</b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('krs')}")
                     return
                 if "{colvo}" not in stri:
@@ -414,7 +414,7 @@ class mlogs(loader.Module):
 
             elif type == "дк":
                 if stri == None:
-                    self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик +<code>{colvo}</code></b>")
+                    self.set('dks', "<i>Good luck!</i>\n🎲 <b>Кейс кубик <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('dks')}")
                     return
                 if "{colvo}" not in stri:
@@ -425,7 +425,7 @@ class mlogs(loader.Module):
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Изменена строка 🎲 <i>Дайс Кейс</i> на</b>:\n{self.get('dks')}")
             elif type == 'зв':
                 if stri == None:
-                    self.set('zvs', "<i>WOW, you are lucky!</i>\n🌌 <b>Звездный Кейс +<code>{colvo}</code></b>")
+                    self.set('zvs', "<i>WOW, you are lucky!</i>\n🌌 <b>Звездный Кейс <code>+{colvo}</code></b>")
                     await utils.answer(message, f"<emoji document_id=5332533929020761310>✅</emoji><b> Установлено значение по умолчанию</b>:\n{self.get('zvs')}")
                     return
                 if "{colvo}" not in stri:
