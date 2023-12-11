@@ -496,7 +496,7 @@ class mstats(loader.Module):
             pst += colvo
             pstd += colvo
             self.set('pst', pst)
-            self.set('psdt', pstd)
+            self.set('pstd', pstd)
 
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "передал(а) тебе" in message.text and "👜" in message.text:
             sspt = r"\d+"
