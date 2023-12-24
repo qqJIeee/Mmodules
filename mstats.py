@@ -307,11 +307,11 @@ class mstats(loader.Module):
                 dkd += colvo
                 self.set('dk', dk)
                 self.set('dkd', dkd)
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
-                zv1 += 1
-                zvd1 += 1
-                self.set("zvd1", zvd1)
-                self.set("zv1",zv1)
+        if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
+            zv1 += 1
+            zvd1 += 1
+            self.set("zvd1", zvd1)
+            self.set("zv1",zv1)
         if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Плазма +" in message.raw_text:
             plpt = r"\d+"
             search = re.search(plpt, message.raw_text)
