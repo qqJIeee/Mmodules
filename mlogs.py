@@ -228,11 +228,11 @@ class mlogs(loader.Module):
                     colvo = search[0]
                     await self.inline.bot.send_message(chid, self.get('dks').format(colvo=colvo))  
 
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
-                if self.get('zv'):
-                    colvo = 1
-                    #ky
-                    await self.inline.bot.send_message(chid, self.get('zvs').format(colvo=colvo))
+        if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
+            if self.get('zv'):
+                colvo = 1
+    
+                await self.inline.bot.send_message(chid, self.get('zvs').format(colvo=colvo))
         
         if self.get('tradec'):                
             if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "передал(а) тебе" in message.raw_text:
