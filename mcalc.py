@@ -4,16 +4,59 @@ from telethon import functions
 from asyncio import sleep
 from .. import loader, utils
 import inspect
+import locale
+from typing import Union 
 
 
+def formatd(value: int):
+    return locale.format("%d", value, grouping=True)
+
+numbers = {
+    "0" : "B",
+    "3" : "T",
+    "6" : "Qa",
+    "9" : "Qi",
+    "12" : "Sx",
+    '15' : "Sp",
+    '18' : "O",
+    "21" : "N",
+    "24" : "D",
+    "27" : "Aa",
+    "30" : "Bb",
+    "33" : "Cc",
+    "36" : "Dd",
+    "39" : "Ee",
+    "42" : "Ff",
+    "45" : "Gg",
+    "48" : "Hh",
+    "51" : "Ii",
+    '54' : "Jj",
+    "57" : "Kk",
+    "60" : "Ll",
+    "63" : "Mm",
+    "66" : "Nn",
+    "69" : "Oo",
+    "72" : "Pp",
+    "75" : "Qq",
+    "78" : "Rr",
+    "81" : "Ss",
+    "84" : "Tt",
+    "87" : "Uu",
+    '90' : "Vv",
+    "93" : "Ww",
+    "96" : "Xx",
+    "99" : "Yy",
+    "102" : "Zz"
+    }
 
 @loader.tds
 class mcalc(loader.Module):
     '''dev - @Kepperok'''
 
-    strings = {
-        "name" : "mcalc",
-    }
+    strings = {"name" : "mcalc"}
+    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+
+    
     @loader.command()
     async def bcl(self, message: Message):
         '''[Ваш уровень бура] [Конечный бура]'''
@@ -35,9 +78,9 @@ class mcalc(loader.Module):
             if current > needed:
                 current, needed = needed, current
             try:
-                await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>.\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?')
+                await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>.\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🧱 | <b>Добыча руды</b>: <code>?/10 мин</code>')
                 await asyncio.sleep(0.4)
-                await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>..\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?')
+                await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>..\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🧱 | <b>Добыча руды</b>: <code>?/10 мин</code>')
                 n = needed - current
                 if n > 2:        
                     f = current * 5000
@@ -47,12 +90,27 @@ class mcalc(loader.Module):
                     b = current * 5000
                 if n == 2:
                     b = current * 5000 + (current + 1) * 5000
+                b = formatd(int(b))
+                i = 1 * 2**(needed-1)
+                i = str(i)
+                v = str(i)[1:]
+                v = len(v)
+                t = v % 3
+                n = i[0:t+1]
+                v = v - v % 3 
+                try:
+                    w = numbers[str(v)]
+                    n = n + w
+                except KeyError:
+                    n = n + "?"
                 await asyncio.sleep(0.4)    
-                await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>...\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?')
+                await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>...\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🧱 | <b>Добыча руды</b>: <code>?/10 мин</code>')
                 await asyncio.sleep(0.4)
-                await utils.answer(message, f'<b>✅ Успешно!</b>\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{int(b)}</code>')
+                await utils.answer(message, f'<b>✅ Успешно!</b>\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{b}</code>\n🧱 | <b>Добыча руды</b>: <code>{n}/10 мин</code>')
             except OverflowError:
                 await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji><b> Ошибка | <code>{cmd}</code>\nВы указали слишком большой уровень бура</b>")
+    
+    
     @loader.command()
     async def mcl(self,message: Message):
         '''[Ваш уровень модуля] [Конечный модуля]'''
@@ -93,13 +151,15 @@ class mcalc(loader.Module):
                 if n == 2:
                     mdlp = current * 10000 + (current + 1) * 10000 
                     mdls = current * 10 + (current + 1) * 10
+                mdlp = formatd(int(mdlp))
+                mdls = formatd(int(mdls))
                 await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>.\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
                 await asyncio.sleep(0.4)
                 await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>..\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
                 await asyncio.sleep(0.4)    
                 await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>...\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
                 await asyncio.sleep(0.4)
-                await utils.answer(message, f'<b>✅ Успешно!</b>\n\n⚙️ | <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 | <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{int(mdlp)}</code>\n🔩 | <b>Нужно скрапа: <code>{int(mdls)}</code></b>\n🍀 | <b>Удача/Эффективность: <code>{mel}%</code>\n🧱 | Руда/Плазма</b>: <code>{mop}x</code>')
+                await utils.answer(message, f'<b>✅ Успешно!</b>\n\n⚙️ | <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 | <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> <code>{mdlp}</code>\n🔩 | <b>Нужно скрапа: <code>{mdls}</code></b>\n🍀 | <b>Удача/Эффективность: <code>{mel}%</code>\n🧱 | Руда/Плазма</b>: <code>{mop}x</code>')
             except OverflowError:
                 await utils.answer(message, f"<emoji document_id=5240241223632954241>🚫</emoji><b> Ошибка | <code>{cmd}</code>\nВы указали слишком большой уровень модуля</b>")
 
