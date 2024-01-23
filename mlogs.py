@@ -146,7 +146,7 @@ class mlogs(loader.Module):
         )
 
         
-        await self.client(functions.channels.InviteToChannelRequestself_backup_channel.id, [self.inline.bot.id]))                                
+        await self.client(functions.channels.InviteToChannelRequest(self.backup_channel.id, [self.inline.bot.id]))                                
         await self.client(functions.channels.EditAdminRequest(
                 channel=self._backup_channel,
                 user_id=self.inline.bot.id,
