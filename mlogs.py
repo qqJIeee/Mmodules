@@ -15,6 +15,9 @@ class mlogs(loader.Module):
     strings = {
         "name" : "mlogs", 
     }
+
+    def __init__(self, channel):
+        self.channel = channel
     
     async def client_ready(self):
         s = self.get('kt')
@@ -136,16 +139,16 @@ class mlogs(loader.Module):
             self.set('creditss', "<code>{nick}</code> <b>перечислил тебе:</b>\n💳 <code>{cred}</code> <b>эво-коинов</b>")
 
 
-        self.set("channel", await utils.asset_channel(
+        self.channel = await utils.asset_channel(
             self._client,
             "mlogs",
             "Группа для работы модуля mlogs",
             silent=True,
             archive=True,
             _folder="hikka",
-        ))
+        )
 
-        channel = self.get("channel")
+        channel = self.channel
         
         await self.client(functions.channels.InviteToChannelRequest(channel.id, [self.inline.bot.id]))                                
         await self.client(functions.channels.EditAdminRequest(
