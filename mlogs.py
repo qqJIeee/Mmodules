@@ -16,7 +16,7 @@ class mlogs(loader.Module):
         "name" : "mlogs", 
     }
 
-    def __init__(self, channel):
+    def __init__(self):
         self.channel = channel
     
     async def client_ready(self):
