@@ -17,7 +17,7 @@ class mlogs(loader.Module):
     }
 
     def __init__(self):
-        self.channel = channel
+        self.channel = None
     
     async def client_ready(self):
         s = self.get('kt')
