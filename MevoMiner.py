@@ -44,7 +44,7 @@ class MevoMiner(loader.Module):
         while self.get('mm'):
             dly = self.get('dly')
             try:
-                await self.client.send_message("@mine_evo_bot", "коп")
+                await self.client.send_message(7168860714, "коп")
                 await asyncio.sleep(dly)
             except errors.FloodWaitError as f:
                 self.set('mm', False)
