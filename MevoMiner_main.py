@@ -10,7 +10,7 @@ import datetime
 import time
 import logging
 
-# meta developer: большая часть кода @kepperok добавления и улучшения @tot_882
+# meta developer: улучшил @tot_882
 @loader.tds
 class MevoMiner(loader.Module):
     strings = {
