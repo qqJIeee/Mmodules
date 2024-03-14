@@ -10,11 +10,11 @@ import datetime
 import time
 import logging
 
-# meta developer: внёс несколько изменений @tot882
+# meta developer: улучшил @tot882
 @loader.tds
-class ToTalMiner(loader.Module):
+class MevoMiner(loader.Module):
     strings = {
-        "name": "ToTalMiner",
+        "name": "MevoMiner_another",
         "kt": "\n<emoji document_id=5775973900580031963>✉️</emoji> Конверт",
         "rkt": "\n<emoji document_id=5422375702731170355>🧧</emoji> Редкий Конверт",
         "k": "\n📦 Кейс",
