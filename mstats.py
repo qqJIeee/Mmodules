@@ -13,7 +13,7 @@ import time
 class mstats(loader.Module):
     '''Модуль для статистики в боте MineEvo'''
     strings = {
-        "name" : "mstats"
+        "name" : "mstats_main"
     }
     async def client_ready(self):
         if self.get('timee') == None:
