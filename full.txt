@@ -1,7 +1,10 @@
-MevoMiner
+MevoMiner_main
+MevoMiner_another
 mlimits
-mstats
+mstats_main
+mstats_another
 mattk
-mlogs
+mlogs_main
+mlogs_another
 maboost
 mcalc
