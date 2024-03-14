@@ -13,7 +13,7 @@ import inspect
 class mlogs(loader.Module):
     '''Модуль для логгирования в боте MineEvo'''
     strings = {
-        "name" : "mlogs", 
+        "name" : "mlogs_another", 
     }
     
     async def client_ready(self):
