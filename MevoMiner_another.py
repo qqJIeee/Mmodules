@@ -10,7 +10,7 @@ import datetime
 import time
 import logging
 
-# meta developer: большая часть кода @kepperok добавления и улучшения @tot_882
+# meta developer: внёс несколько изменений @tot882
 @loader.tds
 class ToTalMiner(loader.Module):
     strings = {
@@ -90,12 +90,12 @@ class ToTalMiner(loader.Module):
         
         if self.get('as'):
             if self.get('mm'):
-                if message.chat_id == 5522271758 and "🔶 Ты выбрал босса" in message.raw_text:
+                if message.chat_id == 7168860714 and "🔶 Ты выбрал босса" in message.raw_text:
                     self.bb = True
                     await self.mm(message)
         if self.get('ag'):
             if self.bb:
-                if message.chat_id == 5522271758 and "для атаки выбери босса" in message.raw_text:
+                if message.chat_id == 7168860714 and "для атаки выбери босса" in message.raw_text:
                     self.bb = False
                     await asyncio.sleep(dly)
                     await self.mm(message)
