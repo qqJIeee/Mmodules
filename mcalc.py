@@ -53,7 +53,7 @@ class mcalc(loader.Module):
     locale.setlocale(locale.LC_ALL, 'en_US')
 
     def formatd(self, value: int):
-        return locale.format("%d", value, grouping=True)
+        return locale.format_string("%d", value, grouping=True)
     
     @loader.command()
     async def bcl(self, message: Message):
