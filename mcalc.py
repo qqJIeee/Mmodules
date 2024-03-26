@@ -54,7 +54,7 @@ class mcalc(loader.Module):
     '''dev - @Kepperok'''
 
     strings = {"name" : "mcalc"}
-    locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
+    locale.setlocale(locale.LC_NUMERIC, '')
 
     
     @loader.command()
