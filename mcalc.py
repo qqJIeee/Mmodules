@@ -50,10 +50,6 @@ class mcalc(loader.Module):
     '''dev - @Kepperok'''
 
     strings = {"name" : "mcalc"}
-    locale.setlocale(locale.LC_NUMERIC, '')
-
-    def formatd(self, value: int):
-        return locale.format_string("%d", value, grouping=True)
     
     @loader.command()
     async def bcl(self, message: Message):
@@ -88,7 +84,6 @@ class mcalc(loader.Module):
                     b = current * 5000
                 if n == 2:
                     b = current * 5000 + (current + 1) * 5000
-                b = formatd(int(b))
                 i = 1 * 2**(needed-1)
                 i = str(i)
                 v = str(i)[1:]
@@ -149,8 +144,6 @@ class mcalc(loader.Module):
                 if n == 2:
                     mdlp = current * 10000 + (current + 1) * 10000 
                     mdls = current * 10 + (current + 1) * 10
-                mdlp = formatd(int(mdlp))
-                mdls = formatd(int(mdls))
                 await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>.\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
                 await asyncio.sleep(0.4)
                 await utils.answer(message, f'🔄 <b>Произвожу подсчет</b>..\n\n💥 <u><b>Текущий Уровень</u>:</b> <code>{current}</code>\n💫 <u><b>Конечный</u>:</b> <code>{needed}</code>\n\n🎆 | <b>Нужно плазмы:</b> ?\n🔩 | <b>Нужно скрапа: ?\n🍀 | <b>Удача/Эффективность: ?\n🧱 | Руда/Плазма</b>: ?')
