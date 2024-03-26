@@ -50,7 +50,7 @@ class mcalc(loader.Module):
     '''dev - @Kepperok'''
 
     strings = {"name" : "mcalc"}
-    locale.setlocale(locale.LC_ALL, 'en-US')
+    locale.setlocale(locale.LC_ALL, 'en_US')
 
     def formatd(self, value: int):
         return locale.format("%d", value, grouping=True)
