@@ -7,10 +7,6 @@ import inspect
 import locale
 from typing import Union 
 
-
-def formatd(value: int):
-    return locale.format("%d", value, grouping=True)
-
 numbers = {
     "0" : "B",
     "3" : "T",
@@ -56,6 +52,8 @@ class mcalc(loader.Module):
     strings = {"name" : "mcalc"}
     locale.setlocale(locale.LC_NUMERIC, '')
 
+    def formatd(self, value: int):
+        return locale.format("%d", value, grouping=True)
     
     @loader.command()
     async def bcl(self, message: Message):
