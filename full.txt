@@ -6,3 +6,4 @@ mattk
 mlogs
 maboost
 mcalc
+mtrade
