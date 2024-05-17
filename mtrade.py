@@ -25,7 +25,7 @@ class mtrade(loader.Module):
         await utils.answer(m, text)
 
     @loader.watcher()
-    async def imwatchingforyoubroyeees(self, m: Message):
+    async def trade_handler(self, m: Message):
 
         if "Трейд" in m.raw_text and "игрока" in m.raw_text:
             if self.get('trade') and m.chat_id == -1002101809770:
