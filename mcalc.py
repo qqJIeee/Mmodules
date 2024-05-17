@@ -47,7 +47,7 @@ numbers = {
 
 @loader.tds
 class mcalc(loader.Module):
-    '''dev - @Kepperok'''
+    '''Модуль для подсчета ресурсов на улучшения в боте @@mine_evo_bot'''
 
     strings = {"name" : "mcalc"}
     
