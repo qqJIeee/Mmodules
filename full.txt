@@ -1,0 +1,9 @@
+MevoMiner_main
+MevoMiner_another
+mlimits
+mstats
+mattk
+mlogs
+maboost
+mcalc
+mtrade
