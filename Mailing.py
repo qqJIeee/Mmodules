@@ -1,22 +1,25 @@
-from asyncio import sleep
-from .. import loader, utils
 import asyncio
+import inspect 
+
 from telethon.tl.types import Message, ChatAdminRights
 from telethon import functions, errors
-import inspect
+
 from ..inline.types import InlineCall
+from .. import loader, utils 
 
 class Mailing(loader.Module):
-    '''Модуль для рассылки\nDeveloper @Kepperok'''
+    '''Модуль для рассылки'''
     strings = {
         "name" : "Mailing"
     }
+
     async def client_ready(self):
         if self.get('ms') == None:
             self.set('ms', [])
 
         if self.get('ii') == None:
             self.set('ii', [])
+
     @loader.command()
     async def magr(self,message):
         '''- Добавить/удалить текущую группу в список'''
