@@ -7,3 +7,4 @@ mlogs
 maboost
 mcalc
 mtrade
+Mailing
