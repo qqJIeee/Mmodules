@@ -1,5 +1,4 @@
-MevoMiner_main
-MevoMiner_another
+MevoMiner
 mlimits
 mstats
 mattk
