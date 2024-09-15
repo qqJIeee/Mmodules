@@ -124,7 +124,7 @@ class MevoMiner(loader.Module):
                             await self.inline.bot.send_message(logs, f"У вас фв молодой человек\nНачну копать через <code>{s}</code> секунд\naction - {self.get('action')}")
                             await asyncio.sleep(s + 2)
 
-                        count += 1
+                        self.set('count', self.get('count') + 1)
                         await asyncio.sleep(self.get('dly'))
             else:
                 if self.get('onesdelay'):
@@ -159,7 +159,7 @@ class MevoMiner(loader.Module):
                         await self.inline.bot.send_message(logs, f"У вас фв молодой человек\nНачну копать через <code>{s}</code> секунд\naction - {self.get('action')}")
                         await asyncio.sleep(s + 2)
                     
-                    count += 1
+                    self.set('count', self.get('count') + 1)
                     await asyncio.sleep(self.get('dly'))
                 
                 else:
