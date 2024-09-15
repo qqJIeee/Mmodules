@@ -50,7 +50,11 @@ class MevoMiner(loader.Module):
         if not self.get('fwd'):
             self.set('fwd', None)
 
-        logs = await self.client.get_entity("hikka-logs")
+        try:
+            logs = await self.client.get_entity("hikka-logs")
+        except:
+            logs = await self.client.get_entity("netfoll-logs")
+        
         logs = "-100" + str(logs.id) 
         self.set('logs', logs)
 
