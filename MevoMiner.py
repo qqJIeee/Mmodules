@@ -169,6 +169,15 @@ class MevoMiner(loader.Module):
                     await asyncio.sleep(self.get('dly'))
                 
                 else:
+                    mine = None
+
+                    if mine_t == "Gold":
+                        mine = 7168860714
+                    if mine_t == "Emerald":
+                        mine = 7084173311
+                    if mine_t == "Ruby":
+                        mine = 7066508668
+                        
                     await self.client.send_message(mine, 'коп')
                     await asyncio.sleep(self.get('dly'))
 
