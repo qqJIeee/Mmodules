@@ -107,7 +107,8 @@ class MevoMiner(loader.Module):
                     for mine in mines:
                         if count > 500:
                             next = "send" if action == 'forward' else 'forward'
-                            self.set(action, next)
+                            self.set('action', next)
+                            self.set('count', 0)
 
                         action = self.get('action')
 
@@ -141,7 +142,8 @@ class MevoMiner(loader.Module):
 
                     if count > 500:
                         next = "send" if action == 'forward' else 'forward'
-                        self.set(action, next)
+                        self.set('action', next)
+                        self.set('count', 0)
 
                     action = self.get('action')
 
