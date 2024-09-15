@@ -39,8 +39,7 @@ class MevoMiner(loader.Module):
         if not self.get('druby'):
             self.set('druby', False)
 
-        if not self.get('mine'):
-            self.set('mine', "Gold")
+        self.set('mine', "Gold")
         
         if not self.get("count"):
             self.set('count', 0)
@@ -129,7 +128,17 @@ class MevoMiner(loader.Module):
                         await asyncio.sleep(self.get('dly'))
             else:
                 if self.get('onesdelay'):
-                    mine = self.get('mine')
+                    count = self.get('count')
+                    mine_t = self.get('mine')
+                    mine = None
+
+                    if mine_t == "Gold":
+                        mine = 7168860714
+                    if mine_t == "Emerald":
+                        mine = 7084173311
+                    if mine_t == "Ruby":
+                        mine = 7066508668
+
                     if count > 500:
                         next = "send" if action == 'forward' else 'forward'
                         self.set(action, next)
@@ -203,18 +212,17 @@ class MevoMiner(loader.Module):
             return
 
         mine = args[0]
-        match mine:
-            case 'g' | 'г':
-                mine = "<emoji document_id=5380036576552178412>💛</emoji> Gold" if me.premium else "Gold"
-                self.set('mine', 7168860714)
+        if mine in ['g', 'г']:
+            mine = "<emoji document_id=5380036576552178412>💛</emoji> Gold" if me.premium else "Gold"
+            self.set('mine', "Gold")
 
-            case 'e' | 'е':
-                mine = "<emoji document_id=5379866611811375909>💚</emoji> Emerald" if me.premium else "Emerald"
-                self.set('mine', 7084173311)
+        if mine in ['e', 'е']:
+            mine = "<emoji document_id=5379866611811375909>💚</emoji> Emerald" if me.premium else "Emerald"
+            self.set('mine', "Emerald")
 
-            case "r" | 'р':
-                mine = "<emoji document_id=5382255988017483709>❤️</emoji> Ruby" if me.premium else "Ruby"
-                self.set('mine', 7066508668)
+        if mine in ["r", 'р']:
+            mine = "<emoji document_id=5382255988017483709>❤️</emoji> Ruby" if me.premium else "Ruby"
+            self.set('mine', "Ruby")
 
         await utils.answer(m, f'<emoji document_id=5980930633298350051>✅</emoji> <b>Успешно!</b>\n<i>Шахта изменена на <code>{mine}</code></i>')
 
