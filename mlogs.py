@@ -166,7 +166,7 @@ class mlogs(loader.Module):
     @loader.watcher()
     async def watcher(self, message):
         chid = int(self.get("chid"))
-        if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "Найден" in message.raw_text or hasattr(message, 'from_id') and message.from_id == 7168860714 and message.chat_id == 7168860714 and "Найден" in message.raw_text:
+        if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "Найден" in message.raw_text:
             if "✉" in message.raw_text and "Конверт" in message.raw_text:
                 if self.get('kt'):
                     colpt = r"\d+"
@@ -230,7 +230,7 @@ class mlogs(loader.Module):
                     colvo = search[0]
                     await self.inline.bot.send_message(chid, self.get('dks').format(colvo=colvo))  
 
-        if hasattr(message, 'from_id') and message.from_id == 7168860714 and message.chat_id == 7168860714 and "💫" in message.raw_text or hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "💫" in message.raw_text:
+        if if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "Найден" in message.raw_text and "💫" in message.raw_text or hasattr(message, 'from_id'):
             if self.get('zv'):
                 colvo = 1
     
@@ -268,21 +268,21 @@ class mlogs(loader.Module):
                 await self.inline.bot.send_message(chid, message.text)
         
         if self.get('boosters'):
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×2.0!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×2.0!" in message.raw_text:
                     await self.inline.bot.send_message(chid, self.get('boostersr2'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×2.0!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×2.0!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersd2'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×1.5!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×1.5!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersd1.5'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×1.5!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×1.5!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersr1.5'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×2.5!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×2.5!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersd2.5'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×2.5!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×2.5!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersr2.5'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×3.0!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Деньги ×3.0!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersr3'))
-            if hasattr(message, 'from_id') and message.from_id == 5522271758 and message.chat_id == 5522271758 and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×3.0!" in message.raw_text:
+            if hasattr(message, 'from_id') and message.from_id in [7084173311, 7066508668, 5522271758, 7168860714] and message.chat_id in [7084173311, 7066508668, 5522271758, 7168860714] and "ты нашел(ла)" in message.raw_text and "бустер: Руда ×3.0!" in message.raw_text:
                 await self.inline.bot.send_message(chid, self.get('boostersd3'))
                 
         if self.get('credits'):
